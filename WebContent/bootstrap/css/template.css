@@ -1,0 +1,60 @@
+/*template/footer/인재채용~이용약관 까지의 링크 색 조정*/
+.page-header h5 a {
+	text-decoration: none;
+	color: black;
+	display: inline;
+	border-right: 2px orange solid;
+	padding-right: 5px;
+}
+
+/*template/footer/인재채용~이용약관 마지막 | none*/
+.page-header h5 a:last-child {
+	border: none;
+}
+
+
+.footer_line li{
+	text-decoration: none;
+	color: black;
+	display: inline;
+	border-right: 2px orange solid;
+	padding-right: 5px;
+}
+
+.footer_line li:last-child, li:nth-child(4){
+	border: none;
+}
+
+.navbar-header .navbar-brand{
+	font-size: 3em;
+	color: orange;
+}
+
+/*login join left정렬*/
+#top_login{
+	text-align: right;
+	padding-right: 0px;
+	margin-bottom: -5px;
+}
+
+/*login join inline정렬*/
+#top_login li{
+	text-decoration: none;
+	color: black;
+	display: inline;
+}
+
+#top_login li a{
+	font-weight: bold;
+	color: orange;
+}
+
+#top_menu li{
+	font-size: 1.2em;
+}
+
+
+#top_menu li a{
+	font-weight: bold;
+	color: gray;
+}
