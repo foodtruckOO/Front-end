@@ -32,45 +32,11 @@
 
 <body>
 	<jsp:include page="/com.sajo.foodtruck/front-end/template/Top.jsp"/>
-    <div class="container">
-    	
-		<div class="page-header">
-  			<h2>자료실 상세보기</h2>
-		</div>	
-		<div class="row">
-		</div>	
-	</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-    
+	
+	<!-- 내용 시작 -->
+	
+	
+	<!-- 내용 끝 -->
    
 	<jsp:include page="/com.sajo.foodtruck/front-end/template/Footer.jsp"/>
  
