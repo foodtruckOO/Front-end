@@ -30,7 +30,6 @@
 					"top" : position + currentPosition + "px"
 				}, 1000);
 			});
-	
 		});
 	</script>
 </head>
@@ -42,15 +41,44 @@
 	<div id="RIGHT">
 		<jsp:include page="/com.sajo.foodtruck/front-end/template/Right.jsp" />
 	</div>
+	
+	<!-- 배경화면/프로필 이미지 등록 -->
+	<div style="width: 80%; margin-left: 10%; background-color: #DDDDDD; height: 400px;">
+		<img src="../../../images/user.png" alt="이미지를 찾을 수 없습니다..." class="img-circle"
+			style="margin-left: 39.7%; margin-top: 250px;">
+	</div>
+	
+	
 	<div class="mypage_table">
 		<!-- table body -->
-		<table style="width: 80%; margin-left: 10%;">
+		<table style="width: 80%; margin-left: 10%; margin-top: 10px;">
+			<!-- background img -->
 			<tr>
-				<td style="background-color: yellow; height: 400px;" colspan="2">back
-					img</td>
+				<td style="background-color: #AAAAAA; height: 50px;">
+				menu1
+				</td>
+				<td style="background-color: white; height: 50px;">
+				menu2
+				</td>
+				<td style="background-color: #AAAAAA; height: 50px;">
+				menu2
+				</td>
+				<td style="background-color: white; height: 50px; width: 20%">
+				<!-- img -->
+				</td>
+				<td style="background-color: #AAAAAA; height: 50px;">
+				menu2
+				</td>
+				<td style="background-color: white; height: 50px;">
+				menu2
+				</td>
+				<td style="background-color: #AAAAAA; height: 50px;">
+				menu2
+				</td>
 			</tr>
-
-
+		</table>
+		
+		<table style="width: 80%; margin-left: 10%; margin-top: 10px;">
 			<tr>
 				<td style="width: 40%;">
 					<div class="col-sm-4" style="margin-top: 20px;">
@@ -66,8 +94,6 @@
 		</table>
 	</div>
 
-	<img src="/com.sajo.foodtruck/front-end/images/user.png"
-		alt="이미지를 찾을 수 없습니다..." class="img-circle">
 
 	<div id="FOOTER">
 		<jsp:include page="/com.sajo.foodtruck/front-end/template/Footer.jsp" />
