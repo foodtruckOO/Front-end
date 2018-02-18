@@ -17,63 +17,43 @@
     <!-- YangGeum template CSS -->    
     <link rel="stylesheet" href="<c:url value='/bootstrap/css/template.css'/>" type="text/css" />
     <!-- Custom styles for this template -->    
-	<style>
-		body {
-		   	min-height: 2000px;
-  			padding-top: 70px;
-		}
-		table,table th{
-			text-align:center;
-		}
-		
-	</style>
 	
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>	
+		$(function(){
+			var currentPosition = parseInt($("#sidebox").css("top"));
+			$(window).scroll(function() {
+				var position = $(window).scrollTop(); 
+				$("#sidebox").stop().animate({"top":position+currentPosition+"px"},1000);
+			});
+			
+		});
+	</script>
   </head>
 
 <body>
-	<jsp:include page="/com.sajo.foodtruck/front-end/template/Top.jsp"/>
-    <div class="container">
-    	
-		<div class="page-header">
-  			<h2>자료실 상세보기</h2>
-		</div>	
-		<div class="row">
-		</div>	
-	</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-			<div>o</div>	
-    
-   
-	<jsp:include page="/com.sajo.foodtruck/front-end/template/Footer.jsp"/>
- 
+	<div id="TOP">
+		<jsp:include page="/com.sajo.foodtruck/front-end/template/Top.jsp"/>
+    </div>
+    <div id="RIGHT">
+		<jsp:include page="/com.sajo.foodtruck/front-end/template/Right.jsp"/>
+    </div>
+	<!-- 내용 시작 -->
+	
+	
+	
+	<h1>MAIN</h1>
+	
+	
+	
+	
+	
+	
+	<!-- 내용 끝 -->
+    <div>
+		<jsp:include page="/com.sajo.foodtruck/front-end/template/Footer.jsp"/>
+ 	</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

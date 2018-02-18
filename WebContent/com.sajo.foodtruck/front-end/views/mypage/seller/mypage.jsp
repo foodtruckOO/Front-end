@@ -102,7 +102,7 @@
 	</div>
 <script>
 var mapOptions = {
-    center: new naver.maps.LatLng(37.4787385,126.8787324),
+    center: new naver.maps.LatLng(37.4777148, ,126.8784326),
     zoom: 8, //지도의 초기 줌 레벨
     minZoom: 1, //지도의 최소 줌 레벨
     zoomControl: true, //줌 컨트롤의 표시 여부
