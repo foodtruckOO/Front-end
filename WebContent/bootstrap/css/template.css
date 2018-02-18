@@ -1,3 +1,12 @@
+/*****************body**********************/
+body {
+	padding-top: 70px;
+}
+
+table, table th {
+	text-align: center;
+}
+
 /*****************Top Footer*****************/
 /*template/footer/인재채용~이용약관 까지의 링크 색 조정*/
 .page-header h5 a {

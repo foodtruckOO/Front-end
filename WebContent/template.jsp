@@ -17,16 +17,7 @@
     <!-- YangGeum template CSS -->    
     <link rel="stylesheet" href="<c:url value='/bootstrap/css/template.css'/>" type="text/css" />
     <!-- Custom styles for this template -->    
-	<style>
-		body {
-		   	min-height: 2000px;
-  			padding-top: 70px;
-		}
-		table,table th{
-			text-align:center;
-		}
-		
-	</style>
+	
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>	
@@ -49,6 +40,14 @@
 		<jsp:include page="/com.sajo.foodtruck/front-end/template/Right.jsp"/>
     </div>
 	<!-- 내용 시작 -->
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	<!-- 내용 끝 -->
