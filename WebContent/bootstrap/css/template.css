@@ -65,3 +65,14 @@
 }
  
 /*******************My page*******************/
+#sidebox{ 
+	position:absolute; 
+	top: 20%;
+	right: 2%;
+}
+
+div #side{
+	background-color: orange;
+	color: white;
+	font-weight: bold;
+}

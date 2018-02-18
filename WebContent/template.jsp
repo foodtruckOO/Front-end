@@ -27,19 +27,34 @@
 		}
 		
 	</style>
-	
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>	
+		$(function(){
+			var currentPosition = parseInt($("#sidebox").css("top"));
+			$(window).scroll(function() {
+				var position = $(window).scrollTop(); 
+				$("#sidebox").stop().animate({"top":position+currentPosition+"px"},1000);
+			});
+			
+		});
+	</script>
   </head>
 
 <body>
-	<jsp:include page="/com.sajo.foodtruck/front-end/template/Top.jsp"/>
-	
+	<div id="TOP">
+		<jsp:include page="/com.sajo.foodtruck/front-end/template/Top.jsp"/>
+    </div>
+    <div id="RIGHT">
+		<jsp:include page="/com.sajo.foodtruck/front-end/template/Right.jsp"/>
+    </div>
 	<!-- 내용 시작 -->
 	
 	
 	<!-- 내용 끝 -->
-   
-	<jsp:include page="/com.sajo.foodtruck/front-end/template/Footer.jsp"/>
- 
+    <div>
+		<jsp:include page="/com.sajo.foodtruck/front-end/template/Footer.jsp"/>
+ 	</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

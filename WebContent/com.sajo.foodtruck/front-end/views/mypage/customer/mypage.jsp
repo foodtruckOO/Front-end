@@ -15,7 +15,7 @@
     <!-- Bootstrap theme -->
     <link href="<c:url value='/bootstrap/css/bootstrap-theme.min.css'/>" rel="stylesheet">
     <!-- YangGeum template CSS -->    
-    <link rel="stylesheet" href="<c:url value='/bootstrap/css/template.css'/>" type="text/css" />
+    <link rel="stylesheet" href="<c:url value='/bootstrap/css/template.css'/>" />
     <!-- Custom styles for this template -->    
 	<style>
 		body {
@@ -27,17 +27,28 @@
 		}
 		
 	</style>
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>	
+		$(function(){
+			var currentPosition = parseInt($("#sidebox").css("top"));
+			$(window).scroll(function() {
+				var position = $(window).scrollTop(); 
+				$("#sidebox").stop().animate({"top":position+currentPosition+"px"},1000);
+			});
+			
+		});
+	</script>
 	
   </head>
 
 <body>
-	<jsp:include page="/com.sajo.foodtruck/front-end/template/Top.jsp"/>
-    <div class="container">
-    	
-		<div class="page-header">
-  			<h2>손님용 마이페이지</h2>
-		</div>	
-	</div>	
+	<div id="TOP">
+		<jsp:include page="/com.sajo.foodtruck/front-end/template/Top.jsp"/>
+    </div>
+    <div id="RIGHT">
+		<jsp:include page="/com.sajo.foodtruck/front-end/template/Right.jsp"/>
+    </div>
 	<div class="mypage_table">
 		<!-- table body -->
 		<table style="width: 80%; margin-left: 10%;">
@@ -63,8 +74,9 @@
 	
 	<img src="/com.sajo.foodtruck/front-end/images/user.png" alt="이미지를 찾을 수 없습니다..." class="img-circle">
 	
+	<div id="FOOTER">
 	<jsp:include page="/com.sajo.foodtruck/front-end/template/Footer.jsp"/>
- 
+ 	</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

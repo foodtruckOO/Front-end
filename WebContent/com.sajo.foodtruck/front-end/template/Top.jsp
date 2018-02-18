@@ -13,6 +13,7 @@
 			style="text-align: center">
 
 			<ul id="top_login">
+				<li><a href="#">MYPAGE</a></li>&emsp;
 				<li><a href="#">LOGIN</a></li>&emsp;
 				<li><a href="#">JOIN</a></li>
 			</ul>
