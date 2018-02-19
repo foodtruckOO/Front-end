@@ -81,7 +81,7 @@
 		</table>
 	</div>
 
-	<div>
+	<div> 
 		<table style="margin-top: 20px; margin-bottom: 20px; width: 100%">
 			<tr>
 				<td style="width: 40%; background-color: orange">
