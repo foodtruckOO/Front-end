@@ -54,7 +54,7 @@
 	
 	<!-- background img -->
 	<div>
-		<table style=" margin-top: 15px;">
+		<table style=" margin-top: 15px; width: 100%">
 			<tr>
 				<td style="background-color: #AAAAAA; height: 50px;">
 				Menu1
@@ -82,7 +82,7 @@
 	</div>
 
 	<div>
-		<table style="margin-top: 20px; margin-bottom: 20px;">
+		<table style="margin-top: 20px; margin-bottom: 20px; width: 100%">
 			<tr>
 				<td style="width: 40%; background-color: orange">
 					<div id="map"></div>
