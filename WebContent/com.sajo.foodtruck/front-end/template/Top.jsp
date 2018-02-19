@@ -21,9 +21,13 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<!-- mypage login join -->
 				<ul id="top_login">
-					<li><a href="#">MYPAGE</a></li>&emsp;
+					<%if(session.getAttribute("USER_ID") ==null){ %>
 					<li><a href="#">LOGIN</a></li>&emsp;
 					<li><a href="#">JOIN</a></li>
+					<%}else{ %>        
+					<li><a href="#">MYPAGE</a></li>&emsp;
+					<li><a href="#">LOGOUT</a></li>
+			        <% } %>
 				</ul>
 				<!-- bar menu -->
 				<ul class="nav navbar-nav navbar-right" id="top_menu">
