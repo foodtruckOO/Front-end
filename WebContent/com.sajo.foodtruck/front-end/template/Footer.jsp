@@ -3,7 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- Begin page content -->
-<div class="container" style="background-color: #f2c000">
+<footer id="footer_footer">
+<div class="container" style="background-color: #f2c000; width: 80%;"> <!-- 한솥컬러 #f2c000  -->
 	<div class="page-header">
 		<h5 style="text-align: center;">
 			<a href="#"> 인재채용</a><a href="#"> 협력업체등록</a><a href="#"> 공지사항</a> <a
@@ -22,3 +23,4 @@
 	<p>&emsp;&emsp;&emsp;© 2018 FOODTRUCK Korea Corporation All Rights Reserved.</p>
 
 </div>
+</footer>
