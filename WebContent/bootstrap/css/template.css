@@ -1,6 +1,7 @@
 /*****************body**********************/
 body {
 	padding-top: 70px;
+	width: 80%; margin-left: 10%; 
 }
 
 table, table th {

@@ -46,7 +46,7 @@
 	</div>
 	
 	<!-- 배경화면/프로필 이미지 등록 -->
-	<div style="width: 80%; margin-left: 10%; background-color: #DDDDDD; height: 400px;">
+	<div style="background-color: #DDDDDD; height: 400px;">
 		<img src="../../../images/user.png" alt="이미지를 찾을 수 없습니다..." class="img-circle"
 			style="margin-left: 39.7%; margin-top: 250px;">
 	</div>
@@ -54,7 +54,7 @@
 	
 	<!-- background img -->
 	<div>
-		<table style="width: 80%; margin-left: 10%; margin-top: 15px;">
+		<table style=" margin-top: 15px;">
 			<tr>
 				<td style="background-color: #AAAAAA; height: 50px;">
 				Menu1
@@ -82,7 +82,7 @@
 	</div>
 
 	<div>
-		<table style="width: 80%; margin-left: 10%; margin-top: 20px; margin-bottom: 20px;">
+		<table style="margin-top: 20px; margin-bottom: 20px;">
 			<tr>
 				<td style="width: 40%; background-color: orange">
 					<div id="map"></div>
