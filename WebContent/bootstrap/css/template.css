@@ -1,7 +1,5 @@
 /*****************body**********************/
 body {
-	padding-top: 70px;
-	width: 80%; margin-left: 10%; 
 }
 
 table, table th {
@@ -13,25 +11,156 @@ header .hd_flex div ul li{
 	display: inline; 
 	background-color: yellow
 }
-/******************top***********************/
-/*******top 전체 영역********/
-#top_top{
-	border: none;
-	width: 80%;
-	margin-left: 10%; 
-	margin-top: -3%;
-	padding-top: 2%;
-	background-image: none;
-	background-color: white;
-	box-shadow: none;
+/******************screen***********************/
+@media screen and (min-width: 1750px) {
+	body  {
+		padding-top: 70px;
+		margin-left: 10%;
+		margin-right: 10%;
+		width: 80%;
+	}
+	/*top logo*/
+	.navbar-header {
+		font-size: 1.3em;
+		margin-top: -0.5%;
+		margin-left: -10% !important;
+	}
+
+	/*top 전체 영역*/
+	#top_top {
+		border: none;
+		width: 100%;
+		margin-top: -3%;
+		padding-top: 2%;
+		background-image: none;
+		background-color: white;
+		box-shadow: none;
+	}
+		
+	/*login join left정렬*/ 
+	#top_login{
+		text-align: right;
+		margin-bottom: -0.5%;
+	}
+	
+	#navbar{
+		margin-right: -10%;
+	}
 }
 
-/*login join left정렬*/ 
-#top_login{
-	text-align: right;
-	padding-right: 0px;
-	margin-bottom: -0.5%;
+@media screen and (min-width: 770px) and (max-width: 1749px){
+	body {
+		background-color: pink;
+		padding-top: 30px;
+		margin-left: 8%;
+		margin-right: 8%;
+		width: 84%;
+	}
+	/*top logo*/
+	.navbar-header {
+		font-size: 1em;
+		margin-left: -5% !important;
+	}
+		
+	/*top 전체 영역*/
+	#top_top{
+		border: none;
+		width: 100%; 
+		margin-top: 0%;
+		padding-top: 1%;
+		background-image: none;
+		background-color: white;
+		box-shadow: none;
+	}	
+
+	/*login join left정렬*/ 
+	#top_login{
+		text-align: right;
+		padding-right: 5%;
+		margin-bottom: -0.5%;
+	}
+	
+	#navbar{
+		margin-right: -8%;
+	}
 }
+
+@media screen and (min-width: 400px) and (max-width: 769px){
+	body {
+		background-color: blue;
+		margin-left: 3%;
+		margin-right: 3%;
+		width: 94%;
+	}
+	/*top logo*/
+	.navbar-header {
+		font-size: 0.8em;
+	}
+	
+	/*top 전체 영역*/
+	#top_top {
+		border: none;
+		width: 100%;
+		margin-top: -3%;
+		padding-top: 2%;
+		background-image: none;
+		background-color: white;
+		box-shadow: none;
+	}
+
+	/*login join left정렬*/ 
+	#top_login{
+		text-align: right;
+		padding-right: 1%;
+		margin-bottom: -0.5%;
+	}
+	
+	
+	#navbar{
+	background-color: green;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	body {
+		background-color: red;
+		margin-left: 3%;
+		margin-right: 3%;
+		width: 94%;
+	}
+	/*top logo*/
+	.navbar-header {
+		font-size: 0.5em;
+	}
+	
+	/*top 전체 영역*/
+	#top_top {
+		border: none;
+		width: 100%;
+		margin-top: -3%;
+		padding-top: 2%;
+		background-image: none;
+		background-color: white;
+		box-shadow: none;
+	}
+
+	/*login join left정렬*/ 
+	#top_login{
+		text-align: right;
+		padding-right: 1%;
+		margin-bottom: -0.5%;
+	}
+	
+	#navbar{
+	background-color: green;
+	}
+}
+/**************************************************/
+
+
+
+
+
 
 /*login join inline정렬*/
 #top_login li{
