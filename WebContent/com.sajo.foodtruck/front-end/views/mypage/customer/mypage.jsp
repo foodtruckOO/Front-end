@@ -51,7 +51,7 @@
 	
 	<!-- background img -->
 	<div>
-		<table style=" margin-top: 15px; width: 100%">
+		<table style=" margin-top: 15px; width: 100%"> 
 			<tr>
 				<td style="background-color: #AAAAAA; height: 50px;">
 				Menu1
