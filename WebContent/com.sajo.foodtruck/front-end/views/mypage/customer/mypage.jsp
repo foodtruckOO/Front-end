@@ -30,7 +30,7 @@
 					"top" : position + currentPosition + "px"
 				}, 1000);
 			});
-		}); 
+		});
 	</script>
 </head>
 
@@ -43,8 +43,9 @@
 	</div>
 	
 	<!-- 배경화면/프로필 이미지 등록 -->
-	<div class="top_background">
-		<img src="../../../images/user.png" alt="이미지를 찾을 수 없습니다..." class="img-circle">
+	<div style="background-color: #DDDDDD; height: 400px; width: auto">
+		<img src="../../../images/user.png" alt="이미지를 찾을 수 없습니다..." class="img-circle"
+			style="margin-left: 39.7%; margin-top: 250px;">
 	</div>
 	
 	
