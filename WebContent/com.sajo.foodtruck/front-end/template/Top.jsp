@@ -14,7 +14,7 @@
 					<span class="sr-only">Toggle navigation</span> <span
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
-				</button> 
+				</button>
 				<a class="navbar-brand" href="#">FOODTRUCK</a>
 				
 				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
