@@ -24,11 +24,19 @@
 				<!-- mypage login join -->
 				<ul id="top_login">
 					<%if(session.getAttribute("USER_ID") ==null){ %>
+<<<<<<< HEAD
 				        <li><a href="#">LOGIN</a></li>&emsp;
 				        <li><a href="#">JOIN</a></li>
 			        <%}else{ %>        
 				        <li><a href="#">MYPAGE</a></li>&emsp;
 				        <li><a href="#">LOGOUT</a></li>&emsp;
+=======
+					<li><a href="#">LOGIN</a></li>&emsp;
+					<li><a href="#">JOIN</a></li>
+					<%}else{ %>        
+					<li><a href="#">MYPAGE</a></li>&emsp;
+					<li><a href="#">LOGOUT</a></li>
+>>>>>>> refs/remotes/origin/master
 			        <% } %>
 				</ul>
 				<!-- bar menu -->
