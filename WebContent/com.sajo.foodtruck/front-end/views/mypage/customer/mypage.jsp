@@ -82,7 +82,7 @@
 		<table style="margin-top: 20px; margin-bottom: 20px; width: 100%">
 			<tr>
 				<td style="width: 40%; background-color: orange">
-					<div id="map"></div>
+					<div id="map" style="height: 400px;"></div>
 				</td>
 				<td style="width: 60%;">
 					<div class="col-sm-4" style="margin-top: 20px;">
@@ -109,6 +109,10 @@
 			}
 		};
 		var map = new naver.maps.Map('map', mapOptions);
+		var marker = new naver.maps.Marker({
+		    position: new naver.maps.LatLng(37.4787385, 126.8787324),
+		    map: map
+		});
 	</script>
 	<!-- Map script end -->
 

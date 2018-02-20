@@ -48,7 +48,7 @@ header .hd_flex div ul li{
 	}
 }
 
-@media screen and (min-width: 995px) and (max-width: 1749px){
+@media screen and (min-width: 1501px) and (max-width: 1749px){
 	body {
 		background-color: pink;
 		padding-top: 30px;
@@ -84,42 +84,23 @@ header .hd_flex div ul li{
 		margin-right: -8%;
 	}
 }
-@media screen and (min-width: 770px) and (max-width: 994px){
+@media screen and (min-width: 770px) and (max-width: 1500px){
 	body {
 		background-color: orange;
-		padding-top: 30px;
 		margin-left: 5%;
 		margin-right: 5%;
 		width: 90%;
 	}
 	/*top logo*/
 	.navbar-header {
-		font-size: 0.9em;
-		margin-left: 1% !important;
+		font-size: 1em;
 	}
-		
-	/*top 전체 영역*/
-	#top_top{
-		border: none;
-		width: 100%; 
-		margin-top: 0%;
-		padding-top: 1%;
-		background-image: none;
-		background-color: white;
-		box-shadow: none;
-	}	
 
 	/*login join left정렬*/ 
 	#top_login{
 		text-align: right;
-		padding-right: 10%;
-	}
-	
-	/*login join*/
-	/*about~startup menu*/
-	#navbar{
-		padding-top:-10%;
-		font-size: 0.8em;
+		padding-right: 1%;
+		margin-bottom: -0.5%;
 	}
 }
 @media screen and (min-width: 400px) and (max-width: 769px){
@@ -151,11 +132,6 @@ header .hd_flex div ul li{
 		padding-right: 1%;
 		margin-bottom: -0.5%;
 	}
-	
-	
-	#navbar{
-	background-color: green;
-	}
 }
 
 @media screen and (max-width: 399px) {
@@ -186,10 +162,6 @@ header .hd_flex div ul li{
 		text-align: right;
 		padding-right: 1%;
 		margin-bottom: -0.5%;
-	}
-	
-	#navbar{
-	background-color: green;
 	}
 }
 /**************************************************/
@@ -269,3 +241,4 @@ div #side{
 	color: white;
 	font-weight: bold;
 }
+

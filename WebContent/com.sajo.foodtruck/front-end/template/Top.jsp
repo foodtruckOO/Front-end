@@ -4,7 +4,7 @@
 
 <!-- Fixed navbar -->
 <header>
-	<nav class="navbar navbar-default navbar-static-top" id="top_top">
+	<nav class="navbar navbar-default" id="top_top"><!--  navbar-fixed-top -->
 		<!-- logo -->
 		<div class="container" id="top_bar">
 			<div class="navbar-header">
@@ -16,14 +16,20 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="#">FOODTRUCK</a>
+				
+				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 			</div>
 			
 			<div id="navbar" class="navbar-collapse collapse">
 				<!-- mypage login join -->
 				<ul id="top_login">
-					<li><a href="#">MYPAGE</a></li>&emsp;
-					<li><a href="#">LOGIN</a></li>&emsp;
-					<li><a href="#">JOIN</a></li>
+					<%if(session.getAttribute("USER_ID") ==null){ %>
+				        <li><a href="#">LOGIN</a></li>&emsp;
+				        <li><a href="#">JOIN</a></li>
+			        <%}else{ %>        
+				        <li><a href="#">MYPAGE</a></li>&emsp;
+				        <li><a href="#">LOGOUT</a></li>&emsp;
+			        <% } %>
 				</ul>
 				<!-- bar menu -->
 				<ul class="nav navbar-nav navbar-right" id="top_menu">
@@ -84,3 +90,7 @@
 		</div>
 	</nav>
 </header>
+
+<script>
+		var width = document.body.scrollWidth;
+</script>
