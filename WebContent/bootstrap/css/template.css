@@ -216,3 +216,19 @@ header .hd_flex div ul li{
 .footer_line li:last-child, li:nth-child(4){
 	border: none;
 }
+
+/*****************right********************/
+
+#sidebox{ 
+	position:absolute; 
+	top: 20%;
+	right: 2%;
+}
+
+div #side{
+	background-color: orange;
+	color: white;
+	font-weight: bold;
+}
+
+
