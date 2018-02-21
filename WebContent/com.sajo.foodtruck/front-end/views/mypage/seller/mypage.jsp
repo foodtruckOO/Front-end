@@ -11,17 +11,14 @@
 <title>Foodtruck:: ver1.0</title>
 
 	<!-- Bootstrap core CSS -->
-	<link href="<c:url value='/bootstrap/css/bootstrap.min.css'/>"
-		rel="stylesheet">
+	<link href="<c:url value='/bootstrap/css/bootstrap.min.css'/>" rel="stylesheet">
 	<!-- Bootstrap theme -->
-	<link href="<c:url value='/bootstrap/css/bootstrap-theme.min.css'/>"
-		rel="stylesheet">
+	<link href="<c:url value='/bootstrap/css/bootstrap-theme.min.css'/>" rel="stylesheet">
 	<!-- YangGeum template CSS -->
-	<link rel="stylesheet"
-		href="<c:url value='/bootstrap/css/template.css'/>" />
+	<link rel="stylesheet" href="<c:url value='/bootstrap/css/template.css'/>" />
 	<!-- naver map -->
-	<script type="text/javascript" 
-	src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=ygb_z5ZpazgrKimoE4A4"></script>
+	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=ygb_z5ZpazgrKimoE4A4&submodules=geocoder"></script>
+	
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
@@ -46,7 +43,7 @@
 	</div>
 	
 	<!-- 배경화면/프로필 이미지 등록 -->
-	<div style="width: 80%; margin-left: 10%; background-color: #DDDDDD; height: 400px;">
+	<div style="background-color: #DDDDDD; height: 400px; width: auto">
 		<img src="../../../images/user.png" alt="이미지를 찾을 수 없습니다..." class="img-circle"
 			style="margin-left: 39.7%; margin-top: 250px;">
 	</div>
@@ -54,7 +51,7 @@
 	
 	<!-- background img -->
 	<div>
-		<table style="width: 80%; margin-left: 10%; margin-top: 15px;">
+		<table style=" margin-top: 15px; width: 100%"> 
 			<tr>
 				<td style="background-color: #AAAAAA; height: 50px;">
 				Menu1
@@ -81,11 +78,11 @@
 		</table>
 	</div>
 
-	<div>
-		<table style="width: 80%; margin-left: 10%; margin-top: 20px; margin-bottom: 20px;">
+	<div> 
+		<table style="margin-top: 20px; margin-bottom: 20px; width: 100%">
 			<tr>
 				<td style="width: 40%; background-color: orange">
-					<div id="map"></div>
+					<div id="map" style="height: 400px;"></div>
 				</td>
 				<td style="width: 60%;">
 					<div class="col-sm-4" style="margin-top: 20px;">
@@ -100,18 +97,24 @@
 			</tr>
 		</table>
 	</div>
-<script>
-var mapOptions = {
-    center: new naver.maps.LatLng(37.4777148, ,126.8784326),
-    zoom: 8, //지도의 초기 줌 레벨
-    minZoom: 1, //지도의 최소 줌 레벨
-    zoomControl: true, //줌 컨트롤의 표시 여부
-    zoomControlOptions: { //줌 컨트롤의 옵션
-        position: naver.maps.Position.TOP_RIGHT}
-};
-
-var map = new naver.maps.Map('map', mapOptions);
-</script>
+	<!-- Map script start -->
+	<script>
+		var mapOptions = {
+			center : new naver.maps.LatLng(37.4787385, 126.8787324),
+			zoom : 9, //지도의 초기 줌 레벨
+			minZoom : 1, //지도의 최소 줌 레벨
+			zoomControl : true, //줌 컨트롤의 표시 여부
+			zoomControlOptions : { //줌 컨트롤의 옵션
+				position : naver.maps.Position.TOP_RIGHT
+			}
+		};
+		var map = new naver.maps.Map('map', mapOptions);
+		var marker = new naver.maps.Marker({
+		    position: new naver.maps.LatLng(37.4787385, 126.8787324),
+		    map: map
+		});
+	</script>
+	<!-- Map script end -->
 
 	<div id="FOOTER">
 		<jsp:include page="/com.sajo.foodtruck/front-end/template/Footer.jsp" />
@@ -124,4 +127,5 @@ var map = new naver.maps.Map('map', mapOptions);
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="<c:url value='/bootstrap/js/bootstrap.min.js'/>"></script>
 </body>
+
 </html>

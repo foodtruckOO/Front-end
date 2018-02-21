@@ -16,8 +16,6 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="#">FOODTRUCK</a>
-				
-				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 			</div>
 			
 			<div id="navbar" class="navbar-collapse collapse">
