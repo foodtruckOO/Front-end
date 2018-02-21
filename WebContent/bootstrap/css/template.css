@@ -1,7 +1,4 @@
 /*****************body**********************/
-body {
-}
-
 table, table th {
 	text-align: center;
 }
@@ -14,10 +11,9 @@ header .hd_flex div ul li{
 /******************screen***********************/
 @media screen and (min-width: 1750px) {
 	body  {
-		padding-top: 5%;
-		margin-left: 10%;
-		margin-right: 10%;
-		width: 80%;
+		margin-top:150px;
+		margin-left:15%;
+		width: 70%;
 	}
 	/*top logo*/
 	.navbar-header {
@@ -30,9 +26,8 @@ header .hd_flex div ul li{
 	#top_top {
 		border: none;
 		width: 100%;
-		margin-top: -3%;
-		padding-top: 5%;
-		padding-bottom:1%;
+		padding-top: 50px;
+		padding-bottom: 50px;
 		background-image: none;
 		background-color: white;
 		box-shadow: none;
@@ -217,8 +212,8 @@ header .hd_flex div ul li{
 	border: none;
 }
 
-/*****************right********************/
 
+/*****************right********************/
 #sidebox{ 
 	position:absolute; 
 	top: 20%;
