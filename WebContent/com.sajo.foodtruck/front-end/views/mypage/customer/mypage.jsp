@@ -16,6 +16,7 @@
 	<link href="<c:url value='/bootstrap/css/bootstrap-theme.min.css'/>" rel="stylesheet">
 	<!-- YangGeum template CSS -->
 	<link rel="stylesheet" href="<c:url value='/bootstrap/css/template.css'/>" />
+	<link rel="stylesheet" href="<c:url value='/bootstrap/css/mypage.css'/>" />
 	<!-- naver map -->
 	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=ygb_z5ZpazgrKimoE4A4&submodules=geocoder"></script>
 	

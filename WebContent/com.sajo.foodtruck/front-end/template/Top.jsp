@@ -4,7 +4,7 @@
 
 <!-- Fixed navbar -->
 <header>
-	<nav class="navbar navbar-default" id="top_top"><!--  navbar-fixed-top -->
+	<nav class="navbar navbar-default navbar-fixed-top" id="top_top"><!--  navbar-fixed-top -->
 		<!-- logo -->
 		<div class="container" id="top_bar">
 			<div class="navbar-header">
@@ -58,8 +58,8 @@
 							<span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">공용 이벤트</a></li>
-							<li><a href="#">푸드트럭별 이벤트</a></li>
+							<li><a href="<c:url value='/com.sajo.foodtruck/front-end/views/event/home_event/Home_event.jsp'/>">공용 이벤트</a></li>
+							<li><a href="<c:url value='/com.sajo.foodtruck/front-end/views/event/seller_event/Seller_event.jsp'/>">푸드트럭별 이벤트</a></li>
 						</ul></li>
 
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
