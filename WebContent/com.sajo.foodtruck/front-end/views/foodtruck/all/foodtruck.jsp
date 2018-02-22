@@ -17,170 +17,135 @@
     <!-- YangGeum template CSS -->    
     <link rel="stylesheet" href="<c:url value='/bootstrap/css/template.css'/>" type="text/css" />
     <!-- Custom styles for this template -->    
-	<style>
-		body {
-		   	min-height: 2000px;
-  			padding-top: 70px;
-		}
-		table,table th{
-			text-align:center;
-		}
-		   #navi{
-        padding:0;
-        width:100%;
-        margin:0;
-      }
-      #navi h2{
-        margin: 0;
-        padding: 0;
-      }
-      /*메인메뉴 스타일 지정*/
-      #navi h2 a{
-        display: block;
-        font-weight: bold;
-        text-decoration: none;
-        margin: 0;
-        padding: 10px;
-        font-family:'돋움', sans-serif;
-        font-size: 14px;
-        color: #ccc;
-        text-shadow: 0 1px 1px #000;
-        background:#1d4ab3;
-        background: -moz-linear-gradient(#1d4ab3 0%, #163887 100%);
-        background: -webkit-linear-gradient(#1d4ab3 0%, #163887 100%);
-        background: -o-linear-gradient(#1d4ab3 0%, #163887 100%);
-        background: linear-gradient(#1d4ab3 0%, #163887 100%);
-      }
-
-      /*메인 메뉴에 대한 마우스 이벤트에 대한 효과 지정*/
-      #navi :target h2 a,
-      #navi h2 a:focus, 
-      #navi h2 a:hover, 
-      #navi h2 a:active{
-        background:#1a1a1a;
-        background:-moz-linear-gradient(#1a1a1a 0%, #000000 100%);
-        background:-webkit-linear-gradient(#1a1a1a 0%, #000000 100%);
-        background:-o-linear-gradient(#1a1a1a 0%, #000000 100%);
-        background:linear-gradient(#1a1a1a 0%, #000000 100%);
-        color:#eee;
-        text-shadow: 0 1px 1px #000000;
-      }
-      /*부메뉴에 대한 기본 설정*/
-      #navi p {
-        padding: 0;
-        margin: 0;
-        height:0;
-        overflow:hidden;
-        -moz-transition:height 0.5s ease-in;
-        -o-transition:all 0.5s ease-in;
-        -webkit-transition:height 0.5s ease-in;
-        transition:height 0.2s ease-in;
-      }
-      /*메인 메뉴를 클릭했을 대의 부메뉴를 정의*/
-#navi :target p {
-  height: 30px;
-  border-bottom: 1px solid #c9c9c9;
-  background:#efefef;
-}
-
-      /*부메뉴 링크에 대한 효과를 정의*/
-
-#navi :target p a{
-  display: block;
-  text-decoration:none;
-  padding: 4px 10px;
-  line-height: 22px;
-  font-size: 13px;
-  color: #4e5800;
-}
-		
-	</style>
 	
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>	
+		$(function(){
+			var currentPosition = parseInt($("#sidebox").css("top"));
+			$(window).scroll(function() {
+				var position = $(window).scrollTop(); 
+				$("#sidebox").stop().animate({"top":position+currentPosition+"px"},1000);
+			});
+			
+		});
+	</script>
   </head>
-
+	<style>
+		.pagination>li>a, .pagination>li>span { border-radius: 50% !important;margin: 0 5px;}
+	</style>
 <body>
-	<jsp:include page="/com.sajo.foodtruck/front-end/template/Top.jsp"/>
-	
-<div class="container">
-	<div class="row">
-	<div class="row row-offcanvas row-offcanvas-right">
-	<!-- 내용 시작 -->
-	 <div class="col-xs-12 col-sm-12">
-			<div class="jumbotron">
-            	<h1>푸드트럭 메뉴</h1>
-            </div>
-			 <div class="col-lg-3">
-          <h2>푸드트럭 분류</h2>
-          	<div id = "navi">
-          <div class="list-group">
-          	<div id="menu1">
-            <h2><a href="#menu1" class="list-group-item">종류별</a></h2>
-            <p><a href="#">한식</a></p>
-            <p><a href="#">중식</a></p>
-            <p><a href="#">일식</a></p>
-            </div>
-            <div id="menu2">
-            <h2><a href="#menu2" class="list-group-item">지역별</a></h2>
-            <p><a href="#">서울</a></p>
-            <p><a href="#">부산</a></p>
-            <p><a href="#">대구</a></p>
-            </div>
-            <h2><a href="#menu3" class="list-group-item">전체보기</a></h2>
-            <h2><a href="#menu3" class="list-group-item">이달의푸드트럭</a></h2>
-            <h2><a href="#menu3" class="list-group-item">샘플메뉴</a></h2>
-          </div>
-        </div>
-        	</div>
-            <div class="col-xs-6 col-lg-3">
-              <a href ="#" >
-              <img class = "img-responsive img-rounded" width ="300" height="200" src="<c:url value ='/front-end/images/menu_list1.jpg'/>">
-              </a>
-              <h3>강남 푸드트럭 돈가스1</h3>
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-3">
-             <a href ="#" >
-              <img class = "img-responsive img-rounded" width ="300" height="200" src="<c:url value ='/front-end/images/menu_list1.jpg'/>">
-              </a>
-              <h3>텍스트</h3>
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-3">
-			  <a href ="#" >
-              <img class = "img-responsive img-rounded" width ="300" height="200" src="<c:url value ='/front-end/images/menu_list1.jpg'/>">
-              </a>
-              <h3>aaaaaaaaaaaa2aaaa</h3>
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class=" col-xs-6 col-lg-3">
-			  <a href ="#">
-              <img class = "img-responsive img-rounded" width ="300" height="200" src="<c:url value ='/front-end/images/menu_list1.jpg'/>">
-              </a>
-              <h3>333333333</h3>
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-3">
-				<a href ="#" >
-              <img class = "img-responsive img-rounded" width ="300" height="200" src="<c:url value ='/front-end/images/menu_list1.jpg'/>">
-              </a>
-              <h3>44444444</h3>
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-3">
-				<a href ="#" >
-              <img class = "img-responsive img-rounded" width ="300" height="200" src="<c:url value ='/front-end/images/menu_list1.jpg'/>">
-              </a>
-              <h3>신규 가입시 마일리지 증정</h3>
-            </div><!--/.col-xs-6.col-lg-4-->
-        
-        
-		
-          
-          
-           
+	<div id="TOP">
+		<jsp:include page="/com.sajo.foodtruck/front-end/template/Top.jsp"/>
     </div>
-    </div>	
+    <div id="RIGHT">
+		<jsp:include page="/com.sajo.foodtruck/front-end/template/Right.jsp"/>
+    </div>
+	<!-- 내용 시작 -->
+	
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="jumbotron">
+				<h1>
+					푸드트럭 메뉴
+				</h1>
+			</div>
+		</div>
+	</div>
+  
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="#" class="nav-tabs-dropdown btn btn-block btn-primary">전체메뉴</a>
+            <ul id="nav-tabs-wrapper" class="nav nav-tabs nav-pills nav-stacked well">
+              <li class="active"><a href="#vtab1" data-toggle="tab">종류별</a></li>
+              <li><a href="#vtab2" data-toggle="tab">지역별</a></li>
+              <li><a href="#vtab3" data-toggle="tab">Tab 3</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9">
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="vtab1">
+                   <div class="col-md-4">
+					<a href ="<c:url value ='/com.sajo.foodtruck/front-end/views/foodtruck/all/foodtruck_detail1.jsp'/>">
+						<img class = "img-responsive img-rounded" width ="300" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/menu_list1.jpg'/>">
+						</a>
+						<h3>
+							첫번째
+						</h3>
+					</div>
+					<div class="col-md-4">
+						<img class = "img-responsive img-rounded" width ="300" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/menu_list1.jpg'/>">
+						<h3>
+							두번째
+						</h3>
+					</div>
+					<div class="col-md-4">
+						<img class = "img-responsive img-rounded" width ="300" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/menu_list1.jpg'/>">
+						<h3>
+							세번째
+						</h3>
+					</div>
+					   <div class="col-md-4">
+						<img class = "img-responsive img-rounded" width ="300" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/menu_list1.jpg'/>">
+						<h3>
+							네번째
+						</h3>
+					</div>
+					<div class="col-md-4">
+						<img class = "img-responsive img-rounded" width ="300" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/menu_list1.jpg'/>">
+						<h3>
+							다번째
+						</h3>
+					</div>
+					<div class="col-md-4">
+						<img class = "img-responsive img-rounded" width ="300" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/menu_list1.jpg'/>">
+						<h3>
+							여섯번째
+						</h3>
+					</div>
+					
+					
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="vtab2">
+                    <h3>지역별</h3>
+                    <p>아직 미구현</p>
+                </div>
+                <div role="tabpanel" class="tab-pane fade in" id="vtab3">
+                    <h3>뭐널지 안정함</h3>
+                    <p>이것도 미구현</p>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	
+	<div class="row">
+		<div class="col-md-offset-6 col-md-6">
+			<ul class="pagination">
+				<li class="disabled"><a href="#">«</a></li>
+              <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">»</a></li>
+			</ul>
+		</div>
+	</div>
+
 </div>
-</div>
+	
+	
+	
+	
+	
+	
+	
 	<!-- 내용 끝 -->
-   
-	<jsp:include page="/com.sajo.foodtruck/front-end/template/Footer.jsp"/>
- 
+    <div>
+		<jsp:include page="/com.sajo.foodtruck/front-end/template/Footer.jsp"/>
+ 	</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

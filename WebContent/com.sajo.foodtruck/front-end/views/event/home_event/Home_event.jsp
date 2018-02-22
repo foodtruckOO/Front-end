@@ -26,6 +26,7 @@
 			text-align:center;
 		}
 		
+		.pagination>li>a, .pagination>li>span { border-radius: 50% !important;margin: 0 5px;}
 	</style>
 	
   </head>
@@ -33,19 +34,23 @@
 <body>
 	<jsp:include page="/com.sajo.foodtruck/front-end/template/Top.jsp"/>
 	
+	  <div id="RIGHT">
+		<jsp:include page="/com.sajo.foodtruck/front-end/template/Right.jsp"/>
+    </div>
+    
 	<!-- 내용 시작 -->
-	 <div class="container">
+	 <div class="container-fluid">
 
       <div class="row row-offcanvas row-offcanvas-right">
 
         <div class="col-xs-12 col-sm-12">
           <div class="jumbotron">
-            <h1>홈페이지 이벤트</h1>
+            <h1>공용 이벤트</h1>
           </div>
           <div class="row">
             <div class="col-xs-6 col-lg-4">
               <a href ="#" >
-              <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/front-end/images/home_event1.jpg'/>">
+              <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/home_event1.jpg'/>">
               </a>
               <h3>신규 가입시 마일리지 증정</h3>
               <p>기간 : 2018-01-01 ~ 2018-01-02</p>
@@ -53,7 +58,7 @@
             </div><!--/.col-xs-6.col-lg-4-->
             <div class="col-xs-6 col-lg-4">
              <a href ="#" >
-              <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/front-end/images/home_event1.jpg'/>">
+              <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/home_event1.jpg'/>">
               </a>
               <h3>신규 가입시 마일리지 증정</h3>
               <p>기간 : 2018-01-01 ~ 2018-01-02</p>
@@ -61,7 +66,7 @@
             </div><!--/.col-xs-6.col-lg-4-->
             <div class="col-xs-6 col-lg-4">
 			  <a href ="#" >
-              <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/front-end/images/home_event1.jpg'/>">
+              <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/home_event1.jpg'/>">
               </a>
               <h3>신규 가입시 마일리지 증정</h3>
               <p>기간 : 2018-01-01 ~ 2018-01-02</p>
@@ -69,7 +74,7 @@
             </div><!--/.col-xs-6.col-lg-4-->
             <div class="col-xs-6 col-lg-4">
 			  <a href ="#" >
-              <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/front-end/images/home_event1.jpg'/>">
+              <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/home_event1.jpg'/>">
               </a>
               <h3>신규 가입시 마일리지 증정</h3>
               <p>기간 : 2018-01-01 ~ 2018-01-02</p>
@@ -77,7 +82,7 @@
             </div><!--/.col-xs-6.col-lg-4-->
             <div class="col-xs-6 col-lg-4">
 				<a href ="#" >
-              <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/front-end/images/home_event1.jpg'/>">
+              <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/home_event1.jpg'/>">
               </a>
               <h3>신규 가입시 마일리지 증정</h3>
               <p>기간 : 2018-01-01 ~ 2018-01-02</p>
@@ -85,7 +90,7 @@
             </div><!--/.col-xs-6.col-lg-4-->
             <div class="col-xs-6 col-lg-4">
 				<a href ="#" >
-              <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/front-end/images/home_event1.jpg'/>">
+              <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/home_event1.jpg'/>">
               </a>
               <h3>신규 가입시 마일리지 증정</h3>
               <p>기간 : 2018-01-01 ~ 2018-01-02</p>
@@ -94,6 +99,21 @@
           </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->
           </div>
+          
+          <div align="center">
+          <ul class="pagination">
+              <li class="disabled"><a href="#">«</a></li>
+              <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">»</a></li>
+            </ul>
+          </div>
+          
+          
+          
     </div><!--/.container-->
 	<!-- 내용 끝 -->
 	<jsp:include page="/com.sajo.foodtruck/front-end/template/Footer.jsp"/>
