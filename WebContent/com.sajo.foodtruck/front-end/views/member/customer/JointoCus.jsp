@@ -20,7 +20,7 @@ body, html {
     max-width: 350px;
     padding: 40px 40px;
 }
-
+ 
 .btn {
     font-weight: 700;
     height: 36px;

@@ -1,7 +1,7 @@
 package model;
 
 import java.sql.Date;
- 
+  
 public class MemberDTO {
 	
 	private String id;

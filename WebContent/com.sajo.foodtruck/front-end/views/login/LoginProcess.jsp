@@ -24,7 +24,7 @@
 		out.println("window.close();");
 		out.println("alert('로그인 성공!');");
 		out.println("</script>");
-	}
+	} 
 	else{//비회원-다시 로그인 페이지로 포워드
 		//out.println("<script>");
 		//out.println("alert('회원정보가 틀려요');");

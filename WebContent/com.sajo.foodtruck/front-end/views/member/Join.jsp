@@ -21,7 +21,7 @@ body, html {
     max-width: 700px;
     max-height: 450px;
     padding: 40px 40px;
-}
+} 
  
 .btn {
     font-weight: 700;

@@ -1,7 +1,7 @@
 ﻿package model;
  
 public class PagingUtil {
-
+ 
 	public static String pagingText(int totalRecordCount,int pageSize,int blockPage,int nowPage,String page){
 		String pagingStr="";
 		

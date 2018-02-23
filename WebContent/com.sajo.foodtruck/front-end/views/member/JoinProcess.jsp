@@ -24,7 +24,7 @@
 	String pwd = "jsp";
 	PreparedStatement pstmt = null;
 	String sql = "";
-	try {
+	try { 
 		//1단계 드라이버 로더
 		Class.forName("oracle.jdbc.OracleDriver");
 		//2단계 디비연결

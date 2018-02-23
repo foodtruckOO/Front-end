@@ -23,7 +23,7 @@
     <!-- YangGeum template CSS -->    
     <link rel="stylesheet" href="<c:url value='/bootstrap/css/template.css'/>" type="text/css" />
     <!-- Custom styles for this template -->    
-	
+	 
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>	

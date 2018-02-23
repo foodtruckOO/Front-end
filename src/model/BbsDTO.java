@@ -1,7 +1,7 @@
 package model;
  
 import java.sql.Date;
-/*
+/* 
  * DTO(Data Tranfer Object):데이타를 전송하는 객체로
  *                          테이블의 레코드 하나를 저장할 수 
  *                          있는 자료구조

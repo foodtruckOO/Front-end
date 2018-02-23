@@ -28,7 +28,7 @@
 				var position = $(window).scrollTop(); 
 				$("#sidebox").stop().animate({"top":position+currentPosition+"px"},1000);
 			});
-			
+			 
 		});
 	</script>
   </head>
