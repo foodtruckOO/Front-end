@@ -13,7 +13,7 @@
 body, html {
     height: 100%;
     background-repeat: no-repeat;
-    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+    background-image: linear-gradient(rgb(239, 151, 19), rgb(255, 255, 255));
 } 
 
 .card-container.card {
@@ -150,7 +150,7 @@ body, html {
 <body>
 	<div class="container">
         <div class="card card-container">
-        <h2>로그인</h2><hr>
+        <h2>로그인</h2><hr style="border: solid 1px #FE9A2E;">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" src="<c:url value='/com.sajo.foodtruck/front-end/images/user.png'/>" />
             <p id="profile-name" class="profile-name-card"></p>

@@ -13,7 +13,7 @@
 body, html {
     height: 100%;
     background-repeat: no-repeat;
-    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+    background-image: linear-gradient(rgb(239, 151, 19), rgb(255, 255, 255));
 }
 
 .card-container.card {
@@ -152,7 +152,7 @@ body, html {
 <body>
 	<div class="container">
         <div class="card card-container">
-        <h2>Please Choice your Join Status</h2><hr>
+        <h2>Please Choice your Join Status</h2><hr style="border: solid 1px #FE9A2E; width: 80%">
            <!-- 일반고객버튼 -->
            <a href="<c:url value='/com.sajo.foodtruck/front-end/views/member/customer/JointoCus.jsp'/>">
            <input class="btn btn-success" type="button" value="Customer" style="width: 250px; height: 250px; font-size: 40px;">

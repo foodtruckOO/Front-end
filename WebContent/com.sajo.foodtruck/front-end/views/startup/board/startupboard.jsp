@@ -45,7 +45,7 @@
 	<!-- 내용 시작 -->
     <section style="padding-top: 80px; margin-right: 80px; margin-left: 80px">
   	<article>
-  	<h2>창업문의 게시판</h2><hr/>
+  	<h2>창업문의 게시판</h2><hr align="left" style="border: solid 1px #FE9A2E; width: 20%">
 	</article>
 	
 	<article style="float: right; margin-right: 30px">		

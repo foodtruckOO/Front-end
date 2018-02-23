@@ -13,7 +13,7 @@
 body, html {
     height: 100%;
     background-repeat: no-repeat;
-    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+    background-image: linear-gradient(rgb(239, 151, 19), rgb(255, 255, 255));
 }
 
 .card-container.card {
@@ -143,7 +143,7 @@ body, html {
 <body onLoad="parent.resizeTo(800,950)">
 	<div class="container">
         <div class="card card-container">
-        <h2>Seller</h2><hr>
+        <h2>Seller</h2><hr style="border: solid 1px #FE9A2E;">
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>

@@ -48,7 +48,7 @@
 	<!-- 내용 시작 -->
 	<section style="padding-top: 80px; margin-right: 80px; margin-left: 80px;">
 	  <article> 
-	  <h2>푸드트럭찾기</h2><hr/>
+	  <h2>푸드트럭찾기</h2><hr align="left" style="border: solid 1px #FE9A2E; width: 20%">
 	  </article>
 
       <!-- <article>
@@ -117,7 +117,7 @@
       </article><br><br>
            
       <article>
-      <h2>검색결과영역</h2><hr/>
+      <h2>검색결과영역</h2><hr align="left" style="border: solid 1px #FE9A2E; width: 20%">
       </article><br>
       	
 	<article style="margin-right:30px; margin-left: 30px">
