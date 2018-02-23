@@ -140,7 +140,7 @@ body, html {
 
 </style>
 </head>
-<body onLoad="parent.resizeTo(800,950)">
+<body onLoad="parent.resizeTo(450,950)">
 	<div class="container">
         <div class="card card-container">
         <h2>Seller</h2><hr style="border: solid 1px #FE9A2E;">

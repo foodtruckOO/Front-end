@@ -11,7 +11,7 @@
 <script type="text/javascript">
 	function popupOpen2(){
 	var popUrl = "<c:url value='/com.sajo.foodtruck/front-end/views/member/Join.jsp'/>";	//팝업창에 출력될 페이지 URL
-	var popOption = "width=800, height=530, resizable=no, scrollbars=no, status=no, left=600, top=200, location=no;";    //팝업창 옵션(optoin)
+	var popOption = "width=650, height=500, resizable=no, scrollbars=no, status=no, left=600, top=200, location=no;";    //팝업창 옵션(optoin)
 		window.open(popUrl,"",popOption);
 	}
 </script>

@@ -18,7 +18,7 @@ body, html {
 
 .card-container.card {
 	text-align: center;
-    max-width: 700px;
+    max-width: 650px;
     max-height: 450px;
     padding: 40px 40px;
 } 
