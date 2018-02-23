@@ -46,7 +46,7 @@
 		<jsp:include page="/com.sajo.foodtruck/front-end/template/Right.jsp"/>
     </div>
 	<!-- 내용 시작 -->
-	<section style="padding-top: 80px; margin-right: 80px; margin-left: 80px; background-color: lightgray">
+	<section style="padding-top: 80px; margin-right: 80px; margin-left: 80px;">
 	  <article> 
 	  <h2>푸드트럭찾기</h2><hr/>
 	  </article>
