@@ -1,3 +1,4 @@
+<%@page import="com.sun.xml.internal.txw2.Document"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -6,6 +7,8 @@
 <html lang="ko">
 <!-- 지도 api -->
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=QRl5RDgAPERBZdgCmTuR&submodules=geocoder"></script>
+<!-- 2]CDN(Content Deliver Network)주소 사용 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,9 +46,13 @@
 		<jsp:include page="/com.sajo.foodtruck/front-end/template/Right.jsp"/>
     </div>
 	<!-- 내용 시작 -->
-	<section>   
-      <article>
-      <div style="float: left; width: 10%;">
+	<section style="padding-top: 80px; margin-right: 80px; margin-left: 80px; background-color: lightgray">
+	  <article> 
+	  <h2>푸드트럭찾기</h2><hr/>
+	  </article>
+
+      <!-- <article>
+      <div style="float: left; width: 10%; margin-left: 30px">
        <label>시/군/구</label>
        <select class="form-control" style="width: 90%;"> 
        <option>서울시</option> 
@@ -70,9 +77,17 @@
        <input class="form-control" type="text" placeholder="상호명을 입력해주세요" style="width: 50%; float:left;"/>&nbsp;
        <input class="btn btn-primary" type="button" value="검색"/>
        </div>
-      </article><br><br><br><br>
-       
+      </article><br><br><br><br> -->
+      <form>
       <article>
+		<div class="search" style="float: left; width: 100%; height: 55%; margin-top: 20px; margin-left: 30px">
+			<input id="address" class="form-control" type="text" placeholder="검색할주소" style="width: 50%; float:left;"/>&nbsp;
+			<input id="submit" class="btn btn-primary" type="button" value="검색"/>
+		</div>
+      </article>
+      </form><br/><br/><br/>
+       
+      <!-- <article style="margin-top: 25px">
        <label class="btn btn-primary">
        <input type="checkbox" autocomplete="off" >한식
        </label>
@@ -91,18 +106,21 @@
        <label class="btn btn-primary">
        <input type="checkbox" autocomplete="off" >기타
         </label>
-      </article><br>
-       
-      <article>
-       <h2>지도영역</h2>
+      </article><br> -->
+      <!-- <article>
+      	 <h2>지도영역</h2><hr/>
+      </article>  -->
+      
+      
+      <article style="margin-right:30px; margin-left: 30px">
         <div id="map" style="width:100%;height:500px;"></div>
       </article><br><br>
            
       <article>
-      <h2>검색결과영역</h2>
+      <h2>검색결과영역</h2><hr/>
       </article><br>
       	
-	<article>
+	<article style="margin-right:30px; margin-left: 30px">
 	<table class="table table-bordered table-hover">
 		<tr style="text-align: center">
 			<th style="width:10%;">번호</th>
@@ -138,13 +156,87 @@
 	<!-- 내용 끝 -->
 	
 	<!-- 지도 -->
-      <script>
-      var mapOptions = {
-          center: new naver.maps.LatLng(37.3595704, 127.105399),
-          zoom: 10
-      };
-      var map = new naver.maps.Map('map', mapOptions);
-      </script>
+    <script id="code">
+		var map = new naver.maps.Map("map", {
+		    center: new naver.maps.LatLng(37.3595316, 127.1052133),
+		    zoom: 10,
+		    mapTypeControl: true
+		});
+		var infoWindow = new naver.maps.InfoWindow({
+		    anchorSkew: true
+		});
+		map.setCursor('pointer');
+		// search by tm128 coordinate
+		function searchCoordinateToAddress(latlng) {
+		    var tm128 = naver.maps.TransCoord.fromLatLngToTM128(latlng);		
+		    infoWindow.close();
+		    naver.maps.Service.reverseGeocode({
+		        location: tm128,
+		        coordType: naver.maps.Service.CoordType.TM128
+		    }, function(status, response) {
+		        if (status === naver.maps.Service.Status.ERROR) {
+		            return alert('Something Wrong!');
+		        }
+		        var items = response.result.items,
+		            htmlAddresses = [];
+		        for (var i=0, ii=items.length, item, addrType; i<ii; i++) {
+		            item = items[i];
+		            addrType = item.isRoadAddress ? '[도로명 주소]' : '[지번 주소]';
+		
+		            htmlAddresses.push((i+1) +'. '+ addrType +' '+ item.address);
+		            htmlAddresses.push('&nbsp&nbsp&nbsp -> '+ item.point.x +','+ item.point.y);
+		        }		
+		        infoWindow.setContent([
+		                '<div style="padding:10px;min-width:200px;line-height:150%;">',
+		                '<h4 style="margin-top:5px;">검색 좌표 : '+ response.result.userquery +'</h4><br />',
+		                htmlAddresses.join('<br />'),
+		                '</div>'
+		            ].join('\n'));
+		        infoWindow.open(map, latlng);
+		    });
+		}
+		// result by latlng coordinate
+		function searchAddressToCoordinate(address) {
+		    naver.maps.Service.geocode({
+		        address: address
+		    }, function(status, response) {
+		        if (status === naver.maps.Service.Status.ERROR) {
+		            return alert('Something Wrong!');
+		        }
+		        var item = response.result.items[0],
+		            addrType = item.isRoadAddress ? '[도로명 주소]' : '[지번 주소]',
+		            point = new naver.maps.Point(item.point.x, item.point.y);
+		
+		        infoWindow.setContent([
+		                '<div style="padding:10px;min-width:200px;line-height:150%;">',
+		                '<h4 style="margin-top:5px;">검색 주소 : '+ response.result.userquery +'</h4><br />',
+		                addrType +' '+ item.address +'<br />',
+		                '&nbsp&nbsp&nbsp -> '+ point.x +','+ point.y,
+		                '</div>'
+		            ].join('\n'));
+		        map.setCenter(point);
+		        infoWindow.open(map, point);
+		    });
+		}
+		function initGeocoder() {
+		    /* map.addListener('click', function(e) {
+		        searchCoordinateToAddress(e.coord);
+		    }); */
+		    $('#address').on('keydown', function(e) {
+		        var keyCode = e.which;
+		
+		        if (keyCode === 13) { // Enter Key
+		            searchAddressToCoordinate($('#address').val());
+		        }
+		    });
+		    $('#submit').on('click', function(e) {
+		        e.preventDefault();	
+		        searchAddressToCoordinate($('#address').val());
+		    });	
+		    searchAddressToCoordinate('서울 금천구 가산디지털2로 123');
+		}
+		naver.maps.onJSContentLoaded = initGeocoder;
+	</script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

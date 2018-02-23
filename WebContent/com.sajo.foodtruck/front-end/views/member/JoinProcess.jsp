@@ -40,7 +40,12 @@
 		//4단계 실행
 		pstmt.executeUpdate(); //insert,update,delete
 		//out.println("회원가입성공");
-		request.getRequestDispatcher("AccountComplete.jsp").forward(request, response);
+		//request.getRequestDispatcher("/com.sajo.foodtruck/front-end/views/main.jsp").forward(request, response);
+		out.println("<script>");
+		out.println("window.opener.location.reload();");
+		out.println("window.close();");
+		out.println("alert('회원가입 성공!');");
+		out.println("</script>");
 	} catch (Exception e) {
 		e.printStackTrace();
 		out.println(e.getMessage());

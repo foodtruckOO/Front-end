@@ -33,7 +33,7 @@
 			
 			<div id="navbar" class="navbar-collapse collapse">
 				<!-- mypage login join -->
-				<ul id="top_login">
+				<ul id="top_login" style="margin-bottom: 5px">
 					<%if(session.getAttribute("USER_ID") ==null){ %>
 				       <li><a href="javascript:popupOpen();">LOGIN</a></li>&emsp;
 				        <li><a href="javascript:popupOpen2();">JOIN</a></li>

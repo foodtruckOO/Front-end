@@ -1,5 +1,5 @@
 package model;
-
+ 
 import java.sql.Date;
 /*
  * DTO(Data Tranfer Object):데이타를 전송하는 객체로

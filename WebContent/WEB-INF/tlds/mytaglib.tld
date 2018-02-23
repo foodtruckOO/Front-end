@@ -22,4 +22,4 @@
     <function-class>eltag.MyTagLib</function-class>
     <function-signature>boolean isMember(java.lang.String,java.lang.String,javax.servlet.ServletContext)</function-signature>   
   </function>
-</taglib>
+</taglib> 

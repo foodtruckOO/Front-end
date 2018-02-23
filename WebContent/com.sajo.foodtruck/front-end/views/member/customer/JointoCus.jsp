@@ -152,16 +152,16 @@ body, html {
         <div class="card card-container">
         <h2>Customer</h2><hr>
             <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin" method="post" action="JoinProcess.jsp">
+            <form class="form-signin" method="post" action="../JoinProcess.jsp">
                 <span id="reauth-email" class="reauth-email"></span>
                 <label>아이디</label>
                 <input type="text" id="inputid" class="form-control" placeholder="아이디를 입력해주세요" name="id" required autofocus>
                 <label>이름</label>
                 <input type="text" id="inputname" class="form-control" placeholder="이름를 입력해주세요" name="name" required autofocus>
                 <label>비밀번호</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="비밀번호를 입력해주세요" name="pwd" required>
+                <input type="password" id="inputpass" class="form-control" placeholder="비밀번호를 입력해주세요" name="pwd" required>
                 <label>비밀번호 확인</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="비밀번호를 입력해주세요" name="pwdcheck" required><br>            
+                <input type="password" id="inputpass2" class="form-control" placeholder="비밀번호를 입력해주세요" name="pwdcheck" required><br>            
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">완료</button>
             </form><!-- /form -->     
         </div><!-- /card-container -->

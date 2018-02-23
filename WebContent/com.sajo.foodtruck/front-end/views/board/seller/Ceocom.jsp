@@ -43,16 +43,16 @@
 	<!-- 내용 시작 -->
 	
 	<!-- 내용 시작 -->
-    <section>
+    <section style="padding-top: 80px; margin-right: 80px; margin-left: 80px">
   	<article>
-  	<h2>사장게시판</h2>
+  	<h2>사장게시판</h2><hr/>
 	</article>
 	
-	<article style="float: right;">		
+	<article style="float: right; margin-right: 30px">		
 	<a href="<c:url value='#'/>"><button type="button" class="btn btn-success">글등록</button></a>
 	</article><br><br>
 	
-	<article>
+	<article style="margin-right:30px; margin-left: 30px">
 	<table class="table table-bordered table-hover">
 		<tr style="text-align: center">
 			<th style="width:10%;">번호</th>

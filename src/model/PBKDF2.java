@@ -7,7 +7,7 @@ import java.util.Base64;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
-
+ 
 public class PBKDF2 {
 	//PBKDF2WithHmacSHA1는 160bit의 해쉬를 생성
 	//public static final String PBKDF2_ALGORITHM = "PBKDF2WithHmacSHA1";
