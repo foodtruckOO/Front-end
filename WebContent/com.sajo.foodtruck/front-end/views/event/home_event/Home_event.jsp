@@ -34,21 +34,24 @@
 <body>
 	<jsp:include page="/com.sajo.foodtruck/front-end/template/Top.jsp"/>
 	
-	  <div id="RIGHT">
+	 <div id="RIGHT">
 		<jsp:include page="/com.sajo.foodtruck/front-end/template/Right.jsp"/>
-    </div>
+    </div> 
     
 	<!-- 내용 시작 -->
 	 <div class="container-fluid">
 
-      <div class="row row-offcanvas row-offcanvas-right">
+      <div class="row">
 
         <div class="col-xs-12 col-sm-12">
-          <div class="jumbotron">
-            <h1>공용 이벤트</h1>
+          <div class="jumbotron" style="background-color:white !important;">
+          <img class="img-fluid" src="<c:url value= '/com.sajo.foodtruck/front-end/images/logo.jpg'/>"/>
+            <h1 style="display: inline;line-height:150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;공용 이벤트</h1>
+            </div>
           </div>
+         </div>
           <div class="row">
-            <div class="col-xs-6 col-lg-4">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
               <a href ="#" >
               <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/home_event1.jpg'/>">
               </a>
@@ -56,7 +59,7 @@
               <p>기간 : 2018-01-01 ~ 2018-01-02</p>
               <p><a class="btn btn-default" href="#" role="button">더보기 &raquo;</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-4">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
              <a href ="#" >
               <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/home_event1.jpg'/>">
               </a>
@@ -64,7 +67,7 @@
               <p>기간 : 2018-01-01 ~ 2018-01-02</p>
               <p><a class="btn btn-default" href="#" role="button">더보기 &raquo;</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-4">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 			  <a href ="#" >
               <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/home_event1.jpg'/>">
               </a>
@@ -72,7 +75,7 @@
               <p>기간 : 2018-01-01 ~ 2018-01-02</p>
               <p><a class="btn btn-default" href="#" role="button">더보기 &raquo;</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-4">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 			  <a href ="#" >
               <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/home_event1.jpg'/>">
               </a>
@@ -80,7 +83,7 @@
               <p>기간 : 2018-01-01 ~ 2018-01-02</p>
               <p><a class="btn btn-default" href="#" role="button">더보기 &raquo;</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-4">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 				<a href ="#" >
               <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/home_event1.jpg'/>">
               </a>
@@ -88,7 +91,7 @@
               <p>기간 : 2018-01-01 ~ 2018-01-02</p>
               <p><a class="btn btn-default" href="#" role="button">더보기 &raquo;</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-4">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 				<a href ="#" >
               <img class = "img-responsive img-rounded" width ="400" height="200" src="<c:url value ='/com.sajo.foodtruck/front-end/images/home_event1.jpg'/>">
               </a>
@@ -97,9 +100,7 @@
               <p><a class="btn btn-default" href="#" role="button">더보기 &raquo;</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
           </div><!--/row-->
-        </div><!--/.col-xs-12.col-sm-9-->
-          </div>
-          
+        
           <div align="center">
           <ul class="pagination">
               <li class="disabled"><a href="#">«</a></li>
