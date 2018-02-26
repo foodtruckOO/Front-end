@@ -1,6 +1,6 @@
 
 /*body, table, div, p{*/
-/*font-family: ‘Spoqa Han Sans’, ‘Spoqa Han Sans JP’, ‘Sans-serif’; }*/
+/*font-family: �쁓poqa Han Sans��, �쁓poqa Han Sans JP��, �쁓ans-serif��; }*/
 
 
 body{background:#fff}
@@ -136,7 +136,7 @@ fieldset[disabled] .btn-kakao.active {
 
 #content{padding:0; margin-bottom:15px; width: 100%}
 
-/* bx-slider 수정 */
+/* bx-slider �닔�젙 */
 .dinner_slider{padding:0}
 .bx-wrapper .bx-pager{margin:0 auto; padding-bottom: 10px}
 .bx-viewport{left:0 !important; border:0 !important; box-shadow:none !important; min-height: 60px !important;}
@@ -265,7 +265,7 @@ fieldset[disabled] .btn-kakao.active {
 .moreBtn strong{color:#ff006c; font-weight:normal}
 
 
-/* 세부디테일 */
+/* �꽭遺��뵒�뀒�씪 */
 .cntnts-title{font-size:20px !important; padding:10px}
 .cntnts-btns{background:#fff}
 
@@ -380,8 +380,6 @@ nav .navbar-tab li.on{border-bottom:5px solid #ef156b}
 
 	.post-area{ overflow-x:hidden !important;}
 
-	.navbar-brand{display:none;}
-	.navbar-brand-web{display:block;}
 }
 
 #wrap{
