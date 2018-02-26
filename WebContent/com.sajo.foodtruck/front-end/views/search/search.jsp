@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="ko"> 
+<html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,7 +28,18 @@
 				$("#sidebox").stop().animate({"top":position+currentPosition+"px"},1000);
 			});
 			
+			$(document).ready(function(e){
+			    $('.search-panel .dropdown-menu').find('a').click(function(e) {
+					e.preventDefault();
+					var param = $(this).attr("href").replace("#","");
+					var concept = $(this).text();
+					$('.search-panel span#search_concept').text(concept);
+					$('.input-group #search_param').val(param);
+				});
+			});
 		});
+		
+	
 	</script>
   </head>
 
@@ -42,9 +53,40 @@
 	<!-- 내용 시작 -->
 	
 	
-	
-	<h1>MAIN</h1>
-	
+	<div class = "container">
+	<div class="jumbotron">
+            <h1>찾기</h1>
+      </div>
+      
+     <div class="container">
+    <div class="row">    
+        <div class="col-xs-8 col-xs-offset-2">
+		    <div class="input-group">
+                <div class="input-group-btn search-panel">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >
+                    	<span id="search_concept">Filter by</span> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#contains">상호명</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#its_equal">지역명</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#greather_than">종류명</a></li>
+                      <li class="divider"></li>
+					  <li><a href="#greather_than">전체</a></li>
+                    </ul>
+                </div>
+                <input type="hidden" name="search_param" value="all" id="search_param">         
+                <input type="text" class="form-control" name="x" placeholder="검색어를 입력해주세요">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+        </div>
+	</div>
+</div> 
+      
+	</div>
 	
 	
 	
