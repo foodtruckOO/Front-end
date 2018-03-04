@@ -22,31 +22,11 @@
 <link rel="stylesheet" type="text/css"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
-	href="<c:url value ='/com.sajo.foodtruck/front-end/views/foodtruck/all/jquery.bxslider.min.js'/>"/>
-<link rel="stylesheet" type="text/css"
-	href="<c:url value ='/com.sajo.foodtruck/front-end/views/foodtruck/all/common.css'/>"/>
-<link rel="stylesheet" type="text/css"
-	href="<c:url value ='/com.sajo.foodtruck/front-end/views/foodtruck/all/base.css'/>" />
-<link rel="stylesheet" type="text/css"
-	href="https://s3.ap-northeast-2.amazonaws.com/dqstatic/assets/css/service/layouts/renew/renew.css?v=20180223161210" />
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/com.sajo.foodtruck/front-end/views/foodtruck/all/taste.css'/>" />
+	href="<c:url value ='/com.sajo.foodtruck/front-end/views/foodtruck/all/foodtruck.css'/>" />
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type="text/javascript"
-	src="<c:url value = '/com.sajo.foodtruck/front-end/views/foodtruck/all/common.js'/>"></script>
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script>	
-		$(function(){
-			var currentPosition = parseInt($("#sidebox").css("top"));
-			$(window).scroll(function() {
-				var position = $(window).scrollTop(); 
-				$("#sidebox").stop().animate({"top":position+currentPosition+"px"},1000);
-			});
-			
-		});
-	</script>
 	<script>
 	function myFunction() {
 	document.getElementById("myDropdown").classList.toggle("show");
@@ -395,12 +375,7 @@
 
 
 	
-	<link rel="stylesheet" type="text/css"
-		href="https://d1yr0lpy7kakcx.cloudfront.net/assets/css/service/layouts/renew/socialStyle.css?v=20180223161210" />
-	<script type="text/javascript"
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-	<script type="text/javascript"
-		src="https://s3.ap-northeast-2.amazonaws.com/dqstatic/assets/js/service/common/doShare.js"></script>
+
 	
 	<!-- 내용 끝 -->
     <div>

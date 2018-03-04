@@ -31,12 +31,21 @@
 			
 		});
 	</script>
-	
+<script>
+	function order(){
+		var order = "<c:url value='/com.sajo.foodtruck/front-end/views/order/order.jsp'/>";
+		alert("상품이 등록되었습니다.");	
+		
+		window.open(order);
+	}
+</script>
 	<style>
 	
 	body {
   font-family: 'open sans';
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  
+   }
 
 img {
   max-width: 100%; }
@@ -88,6 +97,7 @@ img {
 .card {
   margin-top: 50px;
   background: #eee;
+  background-color: white;
   padding: 3em;
   line-height: 1.5em; }
 
@@ -244,11 +254,15 @@ img {
 							</div>
 							<span class="review-no"> 41명 평가</span>
 						</div>
-						<p class="product-description">강남지점 푸드트럭 배고파 밥먹고 싶다</p>
-						<h4 class="price">가격: <span>엄청비쌈</span></h4>
-					
+						<p class="product-description">국민간식 닭꼬치에 저희 꿈을 담고, 여러분들을 찾아 전국 어디든지 달려가는 - "중독" 푸드트럭입니다.
+							저렴한 가격에 맛있는 닭꼬치는 간식, 술안주로도 정말 좋습니다. 정성이 담긴 저희 닭꼬치를 보시면 주저하지 마시고, 꼭 찾아주세요.
+						</p>
+						<h4 class="price">훈제 닭꼬치 : <span>2500원</span></h4>
+						<h4 class="price">수제 닭꼬치 : <span>3500원</span></h4>
+						<h4 class="price">음료 일체 : <span>2000원</span></h4>
+						
 						<div class="action">
-							<button class="add-to-cart btn btn-default" type="button">주문하기</button>
+							<button class="add-to-cart btn btn-default" type="button" onclick="order()">주문하기</button>
 							<button class="like btn btn-default" type="button"><span class="fa fa-heart">좋아요</span></button>
 						</div>
 					</div>

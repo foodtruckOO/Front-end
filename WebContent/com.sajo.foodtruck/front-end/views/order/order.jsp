@@ -36,7 +36,7 @@
 	<!-- 내용 시작 -->
 	<div class="container-fluid">
 	<div class="row">
-		<div class="jumbotron">
+		<div class="jumbotron" >
             <h1>주문하기</h1>
          </div>
          <h2></h2>
