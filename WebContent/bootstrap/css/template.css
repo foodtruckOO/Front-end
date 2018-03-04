@@ -4,7 +4,7 @@ table, table th {
 }
 
 /*top/ 회원가입 로그인*/
-header .hd_flex div ul li{
+header .hd_flex div ul li{ 
 	display: inline; 
 	background-color: yellow
 }
