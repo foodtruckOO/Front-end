@@ -42,81 +42,30 @@
 	<div id="RIGHT">
 		<jsp:include page="/com.sajo.foodtruck/front-end/template/Right.jsp" />
 	</div>
-	
-	<!-- 배경화면/프로필 이미지 등록 -->
-	<div style="background-color: #DDDDDD; height: 400px; width: auto">
-		<img src="../../../images/user.png" alt="이미지를 찾을 수 없습니다..." class="img-circle"
-			style="margin-left: 39.7%; margin-top: 250px;">
+	<!-- 내용 시작 -->
+	<!-- mypage start -->
+	<div id=mypage>
+		<!-- 배경화면/프로필 이미지 등록 -->
+		<div id=mypage_top>
+			<!-- 프로필 -->
+			<img src="../../../images/user.png" alt="이미지를 찾을 수 없습니다..." class="img-circle" id="mypage_top_pro">
+		</div>
+		<div id=mypage_body>
+			<table>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+	<!-- mypage end -->
 	</div>
 	
 	
-	<!-- background img -->
-	<div>
-		<table style=" margin-top: 15px; width: 100%"> 
-			<tr>
-				<td style="background-color: #AAAAAA; height: 50px;">
-				Menu1
-				</td>
-				<td style="background-color: white; height: 50px;">
-				Menu2
-				</td>
-				<td style="background-color: #9866C9; height: 50px;">
-				Menu3
-				</td>
-				<td style="background-color: white; height: 50px; width: 20%">
-				<!-- img -->
-				</td>
-				<td style="background-color: #AAAAAA; height: 50px;">
-				Menu4
-				</td>
-				<td style="background-color: white; height: 50px;">
-				Menu5
-				</td>
-				<td style="background-color: #AAAAAA; height: 50px;">
-				Menu6
-				</td>
-			</tr>
-		</table>
-	</div>
-
-	<div> 
-		<table style="margin-top: 20px; margin-bottom: 20px; width: 100%">
-			<tr>
-				<td style="width: 40%; background-color: orange">
-					<div id="map" style="height: 400px;"></div>
-				</td>
-				<td style="width: 60%;">
-					<div class="col-sm-4" style="margin-top: 20px;">
-						<div class="panel panel-warning">
-							<div class="panel-heading">
-								<h3 class="panel-title">Panel title</h3>
-							</div>
-							<div class="panel-body">Panel content</div>
-						</div>
-					</div>
-				</td>
-			</tr>
-		</table>
-	</div>
-	<!-- Map script start -->
-	<script>
-		var mapOptions = {
-			center : new naver.maps.LatLng(37.4787385, 126.8787324),
-			zoom : 9, //지도의 초기 줌 레벨
-			minZoom : 1, //지도의 최소 줌 레벨
-			zoomControl : true, //줌 컨트롤의 표시 여부
-			zoomControlOptions : { //줌 컨트롤의 옵션
-				position : naver.maps.Position.TOP_RIGHT
-			}
-		};
-		var map = new naver.maps.Map('map', mapOptions);
-		var marker = new naver.maps.Marker({
-		    position: new naver.maps.LatLng(37.4787385, 126.8787324),
-		    map: map
-		});
-	</script>
-	<!-- Map script end -->
-
+	
+	<!-- 내용 끝 -->
 	<div id="FOOTER">
 		<jsp:include page="/com.sajo.foodtruck/front-end/template/Footer.jsp" />
 	</div>
