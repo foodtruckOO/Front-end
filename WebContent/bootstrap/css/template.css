@@ -38,7 +38,11 @@ header .hd_flex div ul li{
 	#navbar{
 		margin-top: 10px;
 	}
-	
+
+	/*right*/	
+	#sidebox{ 
+	right: 8% !important;
+	}
 }
 
 @media screen and (min-width: 1221px) and (max-width: 1500px){
@@ -241,7 +245,7 @@ header .hd_flex div ul li{
 /*****************right********************/
 #sidebox{ 
 	position:absolute; 
-	top: 20%;
+	top: 25%;
 	right: 2%;
 }
 
