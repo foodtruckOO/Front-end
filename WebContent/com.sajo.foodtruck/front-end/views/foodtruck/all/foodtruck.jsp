@@ -19,11 +19,9 @@
     <!-- Custom styles for this template -->    
 	<link rel="stylesheet" type="text/css"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-<link rel="stylesheet" type="text/css"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css"
+	<link rel="stylesheet" type="text/css"
 	href="<c:url value ='/com.sajo.foodtruck/front-end/views/foodtruck/all/foodtruck.css'/>" />
-<script type="text/javascript"
+	<script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -41,7 +39,7 @@
 		<style>
 			body {
 			min-height: 2000px;
-			padding-top: 70px;
+			padding-top: 100px;
 				}
 		</style>
   </head>
