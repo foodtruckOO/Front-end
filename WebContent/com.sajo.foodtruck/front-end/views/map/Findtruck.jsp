@@ -17,6 +17,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Foodtruck:: ver1.0</title>
 
+	<style>
+    /* .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;} */
+    .wrap * {padding: 0;margin: 0;}
+    .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
+    .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
+    .info .title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: bold;}
+    .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
+    .info .close:hover {cursor: pointer;}
+    .info .body {position: relative;overflow: hidden;}
+    .info .desc {position: relative;margin: 13px 0 0 90px;height: 75px;}
+    .desc .ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+    .desc .jibun {font-size: 11px;color: #888;margin-top: -2px;}
+    .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
+    .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+    .info .link {color: #5085BB;}
+	</style>
+
     <!-- Bootstrap core CSS -->    
     <link href="<c:url value='/bootstrap/css/bootstrap.min.css'/>" rel="stylesheet">
     <!-- Bootstrap theme -->
@@ -36,7 +53,6 @@
 		});
 	</script>
   </head>
-
 <body>
 	<div id="TOP">
 		<jsp:include page="/com.sajo.foodtruck/front-end/template/Top.jsp"/>
@@ -57,7 +73,7 @@
 		<div style="margin-left: 30px;">
 		<select class="form-control" name="sido" id="sido" style="width: 10%; float: left; margin-right: 5px"></select>
 		<select class="form-control" name="gugun" id="gugun" style="width: 10%; float: left; margin-right: 5px"></select>
-		<select class="form-control" name="dong" id="dong" style="width: 10%; float: left; margin-right: 5px"></select>
+		<!-- <select class="form-control" name="dong" id="dong" style="width: 10%; float: left; margin-right: 5px"></select> -->
 		<input id="address" class="form-control" type="text" placeholder="상호명" style="width: 20%; float:left; margin-right: 5px"/>
 		<input id="submit" class="btn btn-primary" type="button" value="검색"/>
 		</div>
@@ -110,7 +126,7 @@
 	
 	<!-- 주소검색 -->
 	<script type="text/javascript">
-	new sojaeji('sido', 'gugun', 'dong');
+	new sojaeji('sido', 'gugun');
 	</script>
 	
 	<!-- 지도생성 / 설정-->
@@ -131,34 +147,183 @@
 	var zoomControl = new daum.maps.ZoomControl();
 	map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
 
-	var marker = new daum.maps.Marker({ 
-	    // 지도 중심좌표에 마커를 생성합니다 
-	    position: map.getCenter() 
-	}); 
-	// 지도에 마커를 표시합니다
-	marker.setMap(map);
-	var iwContent = '<div style="padding:5px;">한국소프트웨어<br>인재개발원</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-    iwPosition = new daum.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
-	// 인포윈도우를 생성합니다
-	var infowindow = new daum.maps.InfoWindow({
-    position : iwPosition, 
-    content : iwContent 
-	});
-	// 마커에 마우스오버 이벤트를 등록합니다
-	daum.maps.event.addListener(marker, 'mouseover', function() {
-	  // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
-	    infowindow.open(map, marker);
-	});
 
-	// 마커에 마우스아웃 이벤트를 등록합니다
-	daum.maps.event.addListener(marker, 'mouseout', function() {
-	    // 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
-	    infowindow.close();
-	});
+	// 마커를 표시할 위치와 title 객체 배열입니다 
+	var positions = [
+	    {
+	    	content: 
+		    '<div class="wrap">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            강남푸드트럭존' + 
+            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울특별시 강남구</div>' + 
+            '                <div class="jibun ellipsis">1.스테이크트럭</div>' + 
+            '                <div class="jibun ellipsis" style="color:red;">2.솜사탕트럭</div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>', 
+	        latlng: new daum.maps.LatLng(37.498362532645366 , 127.02784205652671)
+	    },
+	    {
+	    	content:
+    		'<div class="wrap">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            수원푸드트레일러존' + 
+            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울특별시 강남구</div>' + 
+            '                <div class="jibun ellipsis">1.스테이크트럭</div>' + 
+            '                <div class="jibun ellipsis" style="color:red;">2.솜사탕트럭</div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>', 
+	        latlng: new daum.maps.LatLng(37.266858938781496, 127.00106821183854)
+	    },
+	    {
+	    	content:
+    		'<div class="wrap">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            명동푸드트럭존' + 
+            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울특별시 중구</div>' + 
+            '                <div class="jibun ellipsis">1.스테이크트럭</div>' + 
+            '                <div class="jibun ellipsis" style="color:red;">2.솜사탕트럭</div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>', 
+	        latlng: new daum.maps.LatLng(37.56091477322354 , 126.98605602341398)
+	    },
+	    {
+	    	content:
+    		'<div class="wrap">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            여의도푸드트럭존' + 
+            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울특별시 영등포구</div>' + 
+            '                <div class="jibun ellipsis">1.스테이크트럭</div>' + 
+            '                <div class="jibun ellipsis" style="color:red;">2.솜사탕트럭</div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>',
+	        latlng: new daum.maps.LatLng(37.52164383539954, 126.924377760945)
+	    },
+	    {
+	    	content:
+    		'<div class="wrap">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            한강푸드트럭존' + 
+            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울특별시 성동구</div>' + 
+            '                <div class="jibun ellipsis">1.스테이크트럭</div>' + 
+            '                <div class="jibun ellipsis" style="color:red;">2.솜사탕트럭</div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>',
+	        latlng: new daum.maps.LatLng(37.53139936666415 , 127.06432970206485)
+	    },
+	    {
+	    	content:
+    		'<div class="wrap">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            가산푸드트럭존' + 
+            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울특별시 금천구</div>' + 
+            '                <div class="jibun ellipsis">1.스테이크트럭</div>' + 
+            '                <div class="jibun ellipsis" style="color:red;">2.솜사탕트럭</div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>',
+	        latlng: new daum.maps.LatLng(37.478844076216944 , 126.87874277973434)
+	    }
+	];
 
-
-	// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-	//infowindow.open(map, marker)
+	// 마커 이미지의 이미지 주소입니다
+	var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+	    
+	for (var i = 0; i < positions.length; i ++) {
+	    
+	    // 마커 이미지의 이미지 크기 입니다
+	    var imageSize = new daum.maps.Size(24, 35); 
+	    
+	    // 마커 이미지를 생성합니다    
+	    var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize); 
+	    
+	    // 마커를 생성합니다
+	    var marker = new daum.maps.Marker({
+	        map: map, // 마커를 표시할 지도
+	        position: positions[i].latlng, // 마커를 표시할 위치
+	        image : markerImage // 마커 이미지 
+	    });
+	 	// 마커에 표시할 인포윈도우를 생성합니다 
+	    var infowindow = new daum.maps.InfoWindow({
+	    	content: positions[i].content // 인포윈도우에 표시할 내용
+	    });
+	    daum.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+	    daum.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+	    /* daum.maps.event.addListener(marker, 'click', function() {
+	    	 
+		}); */
+	}
+	// 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+	function makeOverListener(map, marker, infowindow) {
+	    return function() {
+	        infowindow.open(map, marker);
+	    };
+	}
+	// 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+	function makeOutListener(infowindow) {
+	    return function() {
+	        infowindow.close();
+	    };
+	}
+	
 	// 장소 검색 객체를 생성합니다
 	var ps = new daum.maps.services.Places();
 	// 키워드를 생성한다
@@ -168,17 +333,15 @@
 		$('#submit').click(function(){
 			var a=$('#sido').val();			
 			var b=$('#gugun').val();
-			var c=$('#dong').val();
+			//var c=$('#dong').val();
 			var d=$('#address').val()==null?" ":$('#address').val();
-			keyword = a+" "+b+" "+c+" "+d;
+			keyword = a+" "+b+" "+d;
 			// 키워드로 장소를 검색합니다
 			ps.keywordSearch(keyword, placesSearchCB); 
 			console.log(keyword);
 		});
 	});
-	// 키워드로 장소를 검색합니다
-	//ps.keywordSearch("경기도 이천시 장호원읍", placesSearchCB); 
-		
+	
 	// 키워드 검색 완료 시 호출되는 콜백함수 입니다
 	function placesSearchCB (data, status, pagination) {
 	    if (status === daum.maps.services.Status.OK) {
@@ -186,10 +349,6 @@
 	        // LatLngBounds 객체에 좌표를 추가합니다
 	        var bounds = new daum.maps.LatLngBounds();
 	        for (var i=0; i<data.length; i++) {
-	        	//일단 마커표시안함!!!
-	        	//일단 마커표시안함!!!
-	        	//일단 마커표시안함!!!
-	            //displayMarker(data[i]);    
 	            bounds.extend(new daum.maps.LatLng(data[i].y, data[i].x));
 	        }       
 	        // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
@@ -197,38 +356,6 @@
 	    } 
 	}
 	
-	/* //일단 마커표시안함!!!
-	//일단 마커표시안함!!!
-	//일단 마커표시안함!!!
-	// 지도에 마커를 표시하는 함수입니다
-	function displayMarker(place) {
-		// 지도에 표시되고 있는 마커를 제거합니다
-	    removeMarker();
-	    // 마커를 생성하고 지도에 표시합니다
-	    var marker = new daum.maps.Marker({
-	        map: map,
-	        position: map.getCenter()
-	    });
-	    markers.push(marker);
-	    // 마커에 마우스이벤트를 등록합니다
-	    daum.maps.event.addListener(marker, 'mouseover', function() {
-	        // 마커를 오버시 장소명이 인포윈도우에 표출됩니다
-	        infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
-	        infowindow.open(map, marker);
-	    });
-	    daum.maps.event.addListener(marker, 'mouseout', function() {
-	        //마우스 아웃시 인포인도우 없어짐
-	    	infowindow.close();
-	    });
-	}
-
-	// 지도 위에 표시되고 있는 마커를 모두 제거합니다
-	function removeMarker() {
-	    for ( var i = 0; i < markers.length; i++ ) {
-	        markers[i].setMap(null);
-	    }   
-	    markers = [];
-	} */
 	</script>
 
     <!-- Bootstrap core JavaScript
