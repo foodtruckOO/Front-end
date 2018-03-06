@@ -1,6 +1,6 @@
 
 /*body, table, div, p{*/
-/*font-family: 占쎌걪poqa Han Sans占쏙옙, 占쎌걪poqa Han Sans JP占쏙옙, 占쎌걪ans-serif占쏙옙; }*/
+/*font-family: �뜝�럩嫄챥oqa Han Sans�뜝�룞�삕, �뜝�럩嫄챥oqa Han Sans JP�뜝�룞�삕, �뜝�럩嫄챏ns-serif�뜝�룞�삕; }*/
 
 
 body{background:#fff}
@@ -136,7 +136,7 @@ fieldset[disabled] .btn-kakao.active {
 
 #content{padding:0; margin-bottom:15px; width: 100%}
 
-/* bx-slider 占쎈땾占쎌젟 */
+/* bx-slider �뜝�럥�빢�뜝�럩�젧 */
 .dinner_slider{padding:0}
 .bx-wrapper .bx-pager{margin:0 auto; padding-bottom: 10px}
 .bx-viewport{left:0 !important; border:0 !important; box-shadow:none !important; min-height: 60px !important;}
@@ -265,7 +265,7 @@ fieldset[disabled] .btn-kakao.active {
 .moreBtn strong{color:#ff006c; font-weight:normal}
 
 
-/* 占쎄쉭�겫占쏙옙逾믭옙�믭옙�뵬 */
+/* �뜝�럡�돪占쎄껀�뜝�룞�삕�얜���삕占쎈���삕占쎈뎄 */
 .cntnts-title{font-size:20px !important; padding:10px}
 .cntnts-btns{background:#fff}
 
@@ -463,15 +463,15 @@ html {
 .float-l{ float: left }
 .float-r{ float: right }
 
-/* ���씠�룷 �뀓�뒪�듃 */
+/* 占쏙옙占쎌뵠占쎈７ 占쎈�볩옙�뮞占쎈뱜 */
 .ellipsis{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-/* �뀓�뒪�듃 �꽱�꽣 */
+/* 占쎈�볩옙�뮞占쎈뱜 占쎄쉽占쎄숲 */
 
-/*�뙣�뵫 : �긽�븯醫뚯슦 | �긽�븯 | �긽 | �슦 | 醫뚯슦 | �븯 | 醫� */
+/*占쎈솭占쎈뎃 : 占쎄맒占쎈릭�넫�슣�뒭 | 占쎄맒占쎈릭 | 占쎄맒 | 占쎌뒭 | �넫�슣�뒭 | 占쎈릭 | �넫占� */
 .p0{ padding: 0; }
 .p05{ padding: 4px; }
 .p1{ padding: 8px; }
@@ -551,7 +551,7 @@ html {
 .p0-0-0-9{ padding: 0 0 0 72px; }
 .p0-0-0-10{ padding: 0 0 0 80px; }
 
-/*媛�蹂� �뙣�뵫 : �긽�븯醫뚯슦 | �긽�븯 | �긽 | �슦 | 醫뚯슦 | �븯 | 醫� */
+/*揶쏉옙癰귨옙 占쎈솭占쎈뎃 : 占쎄맒占쎈릭�넫�슣�뒭 | 占쎄맒占쎈릭 | 占쎄맒 | 占쎌뒭 | �넫�슣�뒭 | 占쎈릭 | �넫占� */
 @media screen and (max-width:767px) {
     .xs-p0{ padding: 0; }
     .xs-p05{ padding: 4px; }
@@ -793,7 +793,7 @@ html {
     .md-p0-0-0-10{ padding: 0 0 0 80px; }
 }
 
-/*留덉쭊 : �긽�븯醫뚯슦 | �긽�븯 | �긽 | �슦 | 醫뚯슦 | �븯 | 醫�  */
+/*筌띾뜆彛� : 占쎄맒占쎈릭�넫�슣�뒭 | 占쎄맒占쎈릭 | 占쎄맒 | 占쎌뒭 | �넫�슣�뒭 | 占쎈릭 | �넫占�  */
 .m0{ margin: 0; }
 .m05{ margin: 4px; }
 .m1{ margin: 8px; }
@@ -873,7 +873,7 @@ html {
 .m0-0-0-9{ margin: 0 0 0 72px; }
 .m0-0-0-10{ margin: 0 0 0 80px; }
 
-/* 紐⑤컮�씪 留덉쭊 : �긽�븯醫뚯슦 | �긽�븯 | �긽 | �슦 | 醫뚯슦 | �븯 | 醫�  */
+/* 筌뤴뫀而�占쎌뵬 筌띾뜆彛� : 占쎄맒占쎈릭�넫�슣�뒭 | 占쎄맒占쎈릭 | 占쎄맒 | 占쎌뒭 | �넫�슣�뒭 | 占쎈릭 | �넫占�  */
 @media screen and (max-width:767px){
     .xs-m0{ margin: 0; }
     .xs-m05{ margin: 4px; }
@@ -1116,10 +1116,10 @@ html {
 }
 
 
-/* 蹂대뜑 */
+/* 癰귣��쐭 */
 hr { border-color: #ffa6a6; border-width: 1px; margin: 16px 0 }
 .border0{ border: 0 !important; }
-/* R媛� */
+/* R揶쏉옙 */
 .radius0{ border-radius: 0 }
 .radius1{ border-radius: 8px }
 .radius2{ border-radius: 16px }
@@ -1138,26 +1138,26 @@ hr { border-color: #ffa6a6; border-width: 1px; margin: 16px 0 }
 @media screen and (min-width: 1200px) { .lg-radius-none{ border-radius: 0} }
 
 
-/* 湲곕낯 �뀓�뒪�듃 而щ윭 */
+/* 疫꿸퀡�궚 占쎈�볩옙�뮞占쎈뱜 �뚎됱쑎 */
 .dq-color{ color: #ff4081; }
 .dq-color-hover{ color: #ffa6a6; }
-/* 湲곕낯 諛곌꼍 而щ윭 */
+/* 疫꿸퀡�궚 獄쏄퀗瑗� �뚎됱쑎 */
 .dq-bg{ background-color: #ff4081; }
 .dq-bg-hover{ background-color: #ffa6a6; }
 .white-bg{ background-color: #ffffff }
-/* 湲곕낯 �뀓�뒪�듃 �젙�젹 */
+/* 疫꿸퀡�궚 占쎈�볩옙�뮞占쎈뱜 占쎌젟占쎌졊 */
 .text-left{ text-align: left } .text-center{ text-align: center } .text-right{ text-align: right }
 @media screen and (max-width: 767px) { .xs-text-left{ text-align: left } .xs-text-center{ text-align: center } .xs-text-right{ text-align: right } }
 @media screen and (min-width: 768px) and (max-width: 991px) { .sm-text-left{ text-align: left } .sm-text-center{ text-align: center } .sm-text-right{ text-align: right } }
 @media screen and (min-width: 992px) and (max-width: 1199px) { .md-text-left{ text-align: left } .md-text-center{ text-align: center } .md-text-right{ text-align: right } }
 @media screen and (min-width: 1200px) { .lg-text-left{ text-align: left } .lg-text-center{ text-align: center } .lg-text-right{ text-align: right } }
-/* 諛곌꼍 �젣嫄� */
+/* 獄쏄퀗瑗� 占쎌젫椰꾬옙 */
 .bg-none{ background: none; }
 @media screen and (max-width: 767px) { .xs-bg-none{ background: none; } }
 @media screen and (min-width: 768px) and (max-width: 991px) { .sm-bg-none{ background: none; } }
 @media screen and (min-width: 992px) and (max-width: 1199px) { .-md-bg-none{ background: none; } }
 @media screen and (min-width: 1200px) { .lg-bg-none{ background: none; } }
-/* 諛뺤뒪 �뎽�룄�슦 */
+/* 獄쏅벡�뮞 占쎈렰占쎈즲占쎌뒭 */
 .boxshadow{ box-shadow: 16px 8px 32px rgba(0,0,0,0.2) }
 .boxshadow-none{ box-shadow: none }
 @media screen and (max-width: 767px) { .xs-boxshadow{ box-shadow: 16px 8px 32px rgba(0,0,0,0.2) } .xs-boxshadow-none{ box-shadow: none } }
@@ -1246,12 +1246,7 @@ html {
     min-height: 100%;
     font-size: 16px !important;
 }
-body {
-    padding-top: 5%;
-		margin-left: 10%;
-		margin-right: 10%;
-		width: 80%;
-}
+
 
 @font-face {
     font-family: 'Spoqa Han Sans';
@@ -1335,7 +1330,7 @@ h1, h2, h3, h4, h5, h6, p, a, td, tr, label, strong, span, i, div {
     }
 }
 
-/*�뵳�됥걟�뚳옙 占쎌겫占쎈열*/
+/*占쎈뎨占쎈맓嫄잞옙�슪�삕 �뜝�럩寃ュ뜝�럥�뿴*/
 div#backtotop {
     background: #fff;
     position: fixed;
@@ -3161,7 +3156,7 @@ div#backtotop {
     display: none;
 }
 
-/* 占쎈쳳占쎄숲 */
+/* �뜝�럥爾녑뜝�럡�댉 */
 .logo.footer {
     border-bottom: 1px #999 solid;
     padding: 5px 0;
@@ -3727,7 +3722,7 @@ div#backtotop {
     white-space: nowrap;
 }
 .title_sub{
-    /* �븳 以� �옄瑜닿린 */
+    /* 占쎈립 餓ο옙 占쎌쁽�몴�떯由� */
     color: #666;
     white-space: nowrap;
     overflow: hidden;
@@ -5038,7 +5033,7 @@ div#backtotop {
     }
 }
 
-/*TASTE - �떖�젰*/
+/*TASTE - 占쎈뼎占쎌젾*/
 
 .taste-calendar-wrap{
     width: 100%;
@@ -5056,7 +5051,7 @@ div#backtotop {
     }
 }
 
-/*TASTE - �떖�젰 �뿤�뜑*/
+/*TASTE - 占쎈뼎占쎌젾 占쎈엘占쎈쐭*/
 .taste-calendar .fc-view-container{
     text-align: center;
     /*border-bottom: 1px #e6e6e6 solid;*/
@@ -5134,11 +5129,11 @@ div#backtotop {
     }
 }
 
-/*TASTE - �떖�젰 蹂몃Ц*/
+/*TASTE - 占쎈뼎占쎌젾 癰귣챶揆*/
 .taste-calendar .fc-view-container .fc-view > table{
     font-size: 1rem;
 }
-/*TASTE - �떖�젰 蹂�.臾�. �뿤�뜑*/
+/*TASTE - 占쎈뼎占쎌젾 癰귨옙.�눧占�. 占쎈엘占쎈쐭*/
 .taste-calendar .fc-view-container .fc-view > table .fc-head{
     background: #333;
 }
@@ -5146,7 +5141,7 @@ div#backtotop {
     color: #fff;
 }
 
-/*TASTE - �떖�젰 蹂몃Ц 諛붾뵒*/
+/*TASTE - 占쎈뼎占쎌젾 癰귣챶揆 獄쏅뗀逾�*/
 .taste-calendar .fc-view-container .fc-view > table .fc-body tr .fc-widget-content .fc-scroller{
     height: auto !important;
     overflow: inherit !important;
@@ -5207,8 +5202,8 @@ div#backtotop {
     }
 }
 
-/*TASTE - �떖�젰 蹂몃Ц 諛붾뵒 堉덈�*/
-/*�긽�떒*/
+/*TASTE - 占쎈뼎占쎌젾 癰귣챶揆 獄쏅뗀逾� �젆�뜄占�*/
+/*占쎄맒占쎈뼊*/
 .taste-calendar .fc-view-container .fc-content-skeleton .fc-day-number{
     float: none !important;
     top: 0.3rem;
@@ -5231,7 +5226,7 @@ div#backtotop {
     }
 }
 
-/*�븯�떒*/
+/*占쎈릭占쎈뼊*/
 .taste-calendar .fc-event,
 .taste-calendar .fc-event-dot{
     background: none;
@@ -5339,7 +5334,7 @@ div#backtotop {
 }
 
 
-/*�떖�젰 湲곌컙 �몴�떆*/
+/*占쎈뼎占쎌젾 疫꿸퀗而� 占쎈ご占쎈뻻*/
 .taste-process{
     padding: 20px 0 30px 0;
 }
@@ -5423,7 +5418,7 @@ div#backtotop {
 
 
 /*
-*TASTE �떊泥� 紐⑤떖李�
+*TASTE 占쎈뻿筌ｏ옙 筌뤴뫀�뼎筌∽옙
 */
 .modal-body.taste-modal-body{
     padding: 0;
@@ -5469,7 +5464,7 @@ div#backtotop {
     }
 }
 
-/*�뜽�꽕�씪*/
+/*占쎈쑞占쎄퐬占쎌뵬*/
 .modal-thumb-wrap{
     position: relative;
     /*height: 250px;*/
@@ -5505,7 +5500,7 @@ div#backtotop {
     transform: translate(-50%, -50%);
 }
 
-/*紐⑤떖李� taste ���씠��*/
+/*筌뤴뫀�뼎筌∽옙 taste 占쏙옙占쎌뵠占쏙옙*/
 .modal-backdrop.fade.in{
     height: 100% !important;
     position: fixed;
@@ -5524,7 +5519,7 @@ div#backtotop {
     margin-bottom: 5px;
     padding-bottom: 15px;
 }
-/*紐⑤떖李� 吏��룄*/
+/*筌뤴뫀�뼎筌∽옙 筌욑옙占쎈즲*/
 .taste_map{
     float: left;
     /*width: -webkit-calc(100% - 40px);*/
@@ -5536,7 +5531,7 @@ div#backtotop {
     /*margin-top: 10px;*/
     overflow: hidden;
 }
-/*紐⑤떖李� taste �떖�젰*/
+/*筌뤴뫀�뼎筌∽옙 taste 占쎈뼎占쎌젾*/
 .taste-calendar.modal-calendar{
     width: 100%;
     max-width: 100%;
@@ -5638,7 +5633,7 @@ div#backtotop {
     border: none;
 }
 
-/*紐⑤떖李� TASTE 蹂몃Ц �궡�슜�뱾*/
+/*筌뤴뫀�뼎筌∽옙 TASTE 癰귣챶揆 占쎄땀占쎌뒠占쎈굶*/
 .modal-taste-group{
     float: left;
     margin-bottom: 10px;
