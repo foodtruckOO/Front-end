@@ -170,7 +170,7 @@
 				</div>
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a class="portfolio-link" 
-						href="#">
+						href="<c:url value='/com.sajo.foodtruck/front-end/views/map/Findtruck.jsp'/>">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
 								<i class="fa fa-plus fa-3x"></i>
@@ -184,8 +184,8 @@
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6 portfolio-item">
-					<a class="portfolio-link" data-toggle="modal"
-						href="#">
+					<a class="portfolio-link" 
+						href="<c:url value='/com.sajo.foodtruck/front-end/views/foodtruck/all/foodtruck.jsp'/>">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
 								<i class="fa fa-plus fa-3x"></i>
@@ -199,8 +199,8 @@
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6 portfolio-item">
-					<a class="portfolio-link" data-toggle="modal"
-						href="#">
+					<a class="portfolio-link" 
+						href="<c:url value='/com.sajo.foodtruck/front-end/views/event/area/Area_event.jsp'/>">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
 								<i class="fa fa-plus fa-3x"></i>
@@ -214,7 +214,7 @@
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6 portfolio-item">
-					<a class="portfolio-link" data-toggle="modal"
+					<a class="portfolio-link" 
 						href="#">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
