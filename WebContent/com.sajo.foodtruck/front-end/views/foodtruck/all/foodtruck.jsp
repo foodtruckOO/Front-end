@@ -260,7 +260,7 @@
 						<div class="card_content">
 							<div class="title_main title clearfix">[명동] 레드홍</div>
 							<div class="date">
-								<span class="dday a"> 6일 남음. </span> <span class="pin a"><i
+								<span class="pin a"><i
 									class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;서울</span>
 							</div>
 						</div>
