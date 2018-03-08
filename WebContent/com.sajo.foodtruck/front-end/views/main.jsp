@@ -19,7 +19,7 @@
     <!-- YangGeum template CSS -->    
     <link rel="stylesheet" href="<c:url value='/bootstrap/css/template.css'/>" type="text/css" />
     <!-- Custom styles for this template -->    
-	<link href="<c:url value='bootstrap/css/agency.css'/>" rel="stylesheet">
+	<link href="<c:url value='/bootstrap/css/agency.css'/>" rel="stylesheet">
 	<!-- Custom fonts for this template -->
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
