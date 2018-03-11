@@ -84,7 +84,7 @@
       <article style="margin-right:30px; margin-left: 30px">
         <div id="map" style="width:100%;height:500px;"></div>
         <!-- 지도 api 호출 -->
-		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0166b61c82cf34bd6dccfd50a04fae1f&libraries=services"></script>
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5b87267b28b64e24405b16229700bf78&libraries=services"></script>
       </article><br><br>
            
       <article>
