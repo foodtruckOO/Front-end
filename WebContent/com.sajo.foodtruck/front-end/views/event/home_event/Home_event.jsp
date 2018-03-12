@@ -107,7 +107,7 @@ table, table th {
 			</div>
 		</div>
 		<!--/row-->
-
+<!-- 
 		<div align="center">
 			<ul class="pagination">
 				<li class="disabled"><a href="#">«</a></li>
@@ -118,7 +118,7 @@ table, table th {
 				<li><a href="#">5</a></li>
 				<li><a href="#">»</a></li>
 			</ul>
-		</div>
+		</div> -->
 
 
 
