@@ -31,10 +31,16 @@ public class eventController {
 		eventDAO dao = new eventDAO(req.getServletContext());
 		List list = dao.selectList();
 		model.addAttribute("event",list);
-	
-		
-		
 	return "/com.sajo.foodtruck/front-end/views/event/home_event/Home_event.jsp";
+	
+	}
+	@RequestMapping("/com.sajo.foodtruck.event/event/view.do")
+	public String View(Model model,HttpServletRequest req,@RequestParam Map map) throws Exception{
+		String key = req.getParameter("eno");
+		eventDAO dao = new eventDAO(req.getServletContext());
+		eventDTO dto = dao.selectOne(key);
+		model.addAttribute("dto",dto);
+		return  "/com.sajo.foodtruck/front-end/views/event/home_event/Home_event_detail.jsp";
 	}
 
 }

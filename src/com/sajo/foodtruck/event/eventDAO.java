@@ -22,7 +22,6 @@ import javax.naming.NamingException;
 import javax.servlet.ServletContext;
 import javax.sql.DataSource;
 
-import model.CusDTO;
 
 public class eventDAO {
 	//멤버변수]
@@ -109,5 +108,25 @@ public class eventDAO {
 		return list;
 	}//////////////////////////////
 	//전체 레코드 수 얻기용]
+	public eventDTO selectOne(String key) {
+		eventDTO dto=null;
+		String sql="SELECT * FROM EVENT WHERE eno=?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, key);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				dto = new eventDTO();
+				dto.setEno(rs.getString(1));
+				dto.setTitle(rs.getString(2));
+				dto.setContent(rs.getString(3));
+				dto.setAttachedfile(rs.getString(4));
+				dto.setS_date(rs.getDate(5));
+				dto.setE_date(rs.getDate(6));
+				dto.setPostdate(rs.getDate(7));
+			}
+		} catch (Exception e) {e.printStackTrace();}
+		return dto;
+	}/////////////////////////////////////////
 
 }

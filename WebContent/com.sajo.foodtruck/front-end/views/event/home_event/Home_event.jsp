@@ -61,7 +61,7 @@ table, table th {
 		<div class="row">
 				<c:forEach items="${event}" var ="dto">
 			<div class="col-xs-6 col-lg-4 thumbnail" style="border: none">
-				<a href="#"> <img class="img-responsive img-rounded"
+				<a href="<c:url value='/com.sajo.foodtruck.event/event/view.do?eno=${dto.eno}'/>"> <img class="img-responsive img-rounded"
 					src="<c:url value ='/com.sajo.foodtruck/front-end/images/${dto.attachedfile}'/>">
 					<h3 style="text-indent: 45px">${dto.title}</h3>
 					<p style="text-indent: 45px">기간 : ${dto.s_date} ~ ${dto.e_date}</p>
