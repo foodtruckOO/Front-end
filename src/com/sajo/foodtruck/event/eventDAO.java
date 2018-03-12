@@ -22,6 +22,8 @@ import javax.naming.NamingException;
 import javax.servlet.ServletContext;
 import javax.sql.DataSource;
 
+import model.CusDTO;
+
 public class eventDAO {
 	//멤버변수]
 	private Connection conn;
@@ -75,41 +77,30 @@ public class eventDAO {
 	 * 
 	 * 
 	 */
-	public List<BbsDTO> selectList(Map<String,Object> map){
-		
-		List<BbsDTO> list = new Vector<BbsDTO>();
+	public List<eventDTO> selectList(){
+		List<eventDTO> list = new Vector<eventDTO>();
 		//페이징 미 적용
-		//String sql="SELECT b.*,name FROM bbs b JOIN member m ON b.id=m.id ";
-		//sql+=" ORDER BY postdate DESC";
+		String sql="SELECT * from EVENT ORDER BY eno";
+			//	+ "e.*,name FROM bbs b JOIN member m ON b.id=m.id ";
+		
 		//페이징 적용-구간쿼리로 변경
-		String sql="SELECT * FROM (SELECT T.*,ROWNUM R FROM (SELECT b.*,name FROM bbs b JOIN member m ON b.id=m.id ";
 		//검색용 쿼리 추가
-		if(map.get("searchColumn")!=null) {
-			sql+=" WHERE "+map.get("searchColumn")+" LIKE '%"+map.get("searchWord")+"%' ";
-			
-		}		
-		sql+=" ORDER BY postdate DESC) T) WHERE R BETWEEN ? AND ?";
-		
-		
 		
 		try {
 			psmt = conn.prepareStatement(sql);
-			//페이징을 위한 시작 및 종료 rownum설정]
-			psmt.setString(1, map.get("start").toString());
-			psmt.setString(2, map.get("end").toString());
+			
 			rs = psmt.executeQuery();
 			
 			
 			while(rs.next()) {
-				BbsDTO dto = new BbsDTO();
-				dto.setContent(rs.getString(4));
-				dto.setId(rs.getString(2));
-				dto.setNo(rs.getString(1));
-				dto.setPostdate(rs.getDate(6));
-				dto.setTitle(rs.getString(3));
-				dto.setVisitcount(rs.getString(5));
-				dto.setName(rs.getString(7));
-				
+				eventDTO dto = new eventDTO();
+				dto.setEno(rs.getString(1));
+				dto.setTitle(rs.getString(2));
+				dto.setContent(rs.getString(3));
+				dto.setAttachedfile(rs.getString(4));
+				dto.setS_date(rs.getDate(5));
+				dto.setE_date(rs.getDate(6));
+				dto.setPostdate(rs.getDate(7));
 				list.add(dto);
 			}////////////while
 		}///try
@@ -118,135 +109,5 @@ public class eventDAO {
 		return list;
 	}//////////////////////////////
 	//전체 레코드 수 얻기용]
-	public int getTotalRecordCount(Map<String,Object> map) {
-		int totalCount =0;
-		try {
-			String sql="SELECT COUNT(*) FROM bbs b JOIN member M ON b.id=m.id ";
-			//검색용 쿼리 추가
-			if(map.get("searchColumn")!=null) {
-				sql+=" WHERE "+map.get("searchColumn")+" LIKE '%"+map.get("searchWord")+"%' ";
-				
-			}		
-			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
-			rs.next();
-			totalCount =rs.getInt(1);
-			System.out.println(totalCount);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return totalCount;
-	}//////////////////////////	
-	//입력용]
-	public int insert(BbsDTO dto) {
-		int affected =0;
-		String sql="INSERT INTO bbs(no,id,title,content) VALUES(SEQ_BBS.NEXTVAL,?,?,?)";
-		try {
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, dto.getId());
-			psmt.setString(2, dto.getTitle());
-			psmt.setString(3, dto.getContent());			
-			affected = psmt.executeUpdate();			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return affected;
-	}///////////////////////
-	//조회수 업데이트]
-	public void updateVisitCount(String key) {
-		String sql="UPDATE bbs SET visitcount=visitcount+1 WHERE no=?";
-		try {
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1,key);
-			psmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}////////////////////////////////////////
-	//상세보기용]
-	public BbsDTO selectOne(String key) {
-		BbsDTO dto=null;
-		String sql="SELECT b.*,name FROM bbs b JOIN member m ON b.id=m.id ";
-		sql+=" WHERE no =?";
-		try {
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, key);
-			rs = psmt.executeQuery();
-			if(rs.next()) {
-				dto = new BbsDTO();
-				dto.setContent(rs.getString(4));
-				dto.setId(rs.getString(2));
-				dto.setNo(rs.getString(1));
-				dto.setPostdate(rs.getDate(6));
-				dto.setTitle(rs.getString(3));
-				dto.setVisitcount(rs.getString(5));
-				dto.setName(rs.getString(7));
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}		
-		return dto;
-	}//////////////////////////////
-	//이전글/다음글 얻기]
-	public Map<String,BbsDTO> prevNNext(String key){
-		Map<String,BbsDTO> map = new HashMap<String,BbsDTO>();		
-		try {
-			//이전글 얻기
-			String sql="SELECT no,title FROM bbs WHERE no=(SELECT min(no) FROM bbs WHERE no > ?)";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, key);
-			rs = psmt.executeQuery();			
-			if(rs.next()) {//이전글이 있는 경우
-				BbsDTO dto= new BbsDTO();
-				dto.setNo(rs.getString(1));
-				dto.setTitle(rs.getString(2));
-				map.put("PREV",dto);
-			}
-			//다음글 얻기
-			sql="SELECT no,title FROM bbs WHERE no=(SELECT max(no) FROM bbs WHERE no < ?)";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, key);
-			rs = psmt.executeQuery();			
-			if(rs.next()) {//다음글이 있는 경우
-				BbsDTO dto= new BbsDTO();
-				dto.setNo(rs.getString(1));
-				dto.setTitle(rs.getString(2));
-				map.put("NEXT",dto);
-			}
-			
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}		
-		return map;
-	}/////////////////////////////
-	//수정용]
-	public int update(BbsDTO dto) {
-		int affected =0;
-		String sql="UPDATE bbs SET title=?,content=? WHERE no=?";
-		try {
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, dto.getTitle());
-			psmt.setString(2, dto.getContent());
-			psmt.setString(3, dto.getNo());			
-			affected = psmt.executeUpdate();			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return affected;
-	}///////////////////////
-	//삭제용]
-	public int delete(String key) {
-		int affected =0;
-		String sql="DELETE FROM bbs WHERE no=?";
-		try {
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, key);		
-			affected = psmt.executeUpdate();			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return affected;
-	}////////////////
-	
+
 }

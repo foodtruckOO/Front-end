@@ -28,7 +28,12 @@ public class eventController {
 	@RequestMapping("/com.sajo.foodtruck.event/event.do")
 	public String List(Model model, HttpServletRequest req,@RequestParam Map map) throws Exception{
 		
+		eventDAO dao = new eventDAO(req.getServletContext());
+		List list = dao.selectList();
+		model.addAttribute("event",list);
 	
+		
+		
 	return "/com.sajo.foodtruck/front-end/views/event/home_event/Home_event.jsp";
 	}
 

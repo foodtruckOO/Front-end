@@ -10,6 +10,8 @@ import java.sql.Date;
  */
 public class eventDTO {
 	
+	public eventDTO() {
+	}
 	//속성 혹은 멤버변수]
 	private String eno;
 	private String title;
