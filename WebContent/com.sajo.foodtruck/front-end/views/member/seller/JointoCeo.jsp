@@ -4,6 +4,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<script language="javascript">
+function goPopup(){
+	// 주소검색을 수행할 팝업 페이지를 호출합니다.
+	// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrCoordUrl.do)를 호출하게 됩니다.
+	var pop = window.open("jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+}
+function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2){//,engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn,detBdNmList,bdNm,bdKdcd,siNm,sggNm,emdNm,liNm,rn,udrtYn,buldMnnm,buldSlno,mtYn,lnbrMnnm,lnbrSlno,emdNo,entX,entY){
+		// 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
+		document.form.roadFullAddr.value = roadFullAddr;
+		document.form.roadAddrPart1.value = roadAddrPart1;
+		document.form.roadAddrPart2.value = roadAddrPart2;
+		document.form.addrDetail.value = addrDetail;		
+}
+</script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -87,9 +102,13 @@ body, html {
 .form-signin #inputid,
 .form-signin #inputPassword,
 .form-signin #inputsaupno,
-.form-signin #inputtruckno {
+.form-signin #inputtruckname,
+.form-signin #roadAddrPart1,
+.form-signin #roadAddrPart2,
+.form-signin #addrDetail
+ {
     direction: ltr;
-    height: 44px;
+    height: 35px;
     font-size: 16px;
 }
 
@@ -141,22 +160,49 @@ body, html {
 </style>
 </head>
 <body onLoad="parent.resizeTo(450,950)">
+<script>
+function pwdCheck(){
+	var pwd = document.getElementById("inputpass").value;
+	var pwdcheck = document.getElementById("inputpass2").value;
+	if(pwd == pwdcheck){
+		document.getElementById("same").innerHTML="비밀번호가 일치 합니다"
+		document.getElementById("same").style.color="green"
+	}
+	else{
+		document.getElementById("same").innerHTML="비밀번호가 일치하지 않습니다."
+		document.getElementById("same").style.color="red"
+	}
+}
+</script>
 	<div class="container">
         <div class="card card-container">
         <h2>Seller</h2><hr style="border: solid 1px #FE9A2E;">
             <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin">
+            <form class="form-signin" method="post" name="form" id="form" action="../SellerJoinProcess.jsp">
                 <span id="reauth-email" class="reauth-email"></span>
                 <label>아이디</label>
-                <input type="text" id="inputid" class="form-control" placeholder="아이디를 입력해주세요" required autofocus>
+                <input type="text" id="inputid" class="form-control" placeholder="아이디를 입력해주세요" name="id" required autofocus>
+                <input type="button" id=idcheck" class="btn btn-lg btn-primary btn-block btn-signin", name="idcheck" value="중복확인" onclick="idcheck()"/><br>
                 <label>비밀번호</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="비밀번호를 입력해주세요" required>
+                <input type="password" id="inputpass" class="form-control" placeholder="비밀번호를 입력해주세요" name="pwd" onchange="pwdCheck()" required>
                 <label>비밀번호 확인</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="비밀번호를 입력해주세요" required>
+                <input type="password" id="inputpass2" class="form-control" placeholder="비밀번호를 입력해주세요" name="pwdcheck" onchange="pwdCheck()" required><span id="same"></span><br><br>
                 <label>사업자번호</label>
-                <input type="text" id="inputsaupno" class="form-control" placeholder="ex)123-45-67890" required>
-                <label>차량번호</label>
-                <input type="text" id="inputtruckno" class="form-control" placeholder="ex)12가3456" required>
+                <input type="text" id="inputsaupno" class="form-control" placeholder="ex)123-45-67890" name="fno" required>
+                <label>대표명</label>
+                <input type="text" id="ownername" class="form-control" placeholder="이름(대표자 성함)을 입력해주세요" name="name" required>
+                <label>점포명</label>
+                <input type="text" id="inputtruckname" class="form-control" placeholder="점포명을 입력해주세요" name="tname" required>
+                <label>연락처</label>
+                <input type="text" id="phonenumber" class="form-control" placeholder="연락처를입력해주세요" name="phone" required>
+                <label>주소</label>
+               	<input type="button" onClick="goPopup();" class="form-control" value="주소찾기"/>
+				<input type="hidden" class="form-control" id="roadFullAddr" name="roadFullAddr" /><br>
+				도로명주소 <input type="text" class="form-control" id="roadAddrPart1" name="roadAddrPart1" readonly/><br>
+				고객입력 상세주소<input type="text" class="form-control" id="addrDetail" name="addrDetail" readonly/><br>
+				<input type="hidden" class="form-control" id="roadAddrPart2" name="roadAddrPart2" /><br>
+				
+                
                 <label>업종선택</label>
                 <p style="font-size: 0.8em; color: red;">*다중선택 가능</p>
                 <div class="checkbox" style="text-align: center">
@@ -180,7 +226,6 @@ body, html {
 				    </label>&emsp;
 				</div><br>
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">완료</button>
-                
             </form><!-- /form -->     
         </div><!-- /card-container -->
     </div><!-- /container -->

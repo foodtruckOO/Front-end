@@ -22,14 +22,16 @@ import javax.naming.NamingException;
 import javax.servlet.ServletContext;
 import javax.sql.DataSource;
 
-public class BbsDAO {
+import sun.reflect.generics.tree.BottomSignature;
+
+public class CusDAO {
 	//멤버변수]
 	private Connection conn;
 	private ResultSet rs;
 	private PreparedStatement psmt;
 	
 	//생성자]
-	public BbsDAO(ServletContext context) {
+	public CusDAO(ServletContext context) {
 		//커넥션 풀 미 사용-커넥션 객체 메모리에 직접 생성 코드
 		/*
 		try {
@@ -64,27 +66,53 @@ public class BbsDAO {
 			if(conn !=null) conn.close();
 		} catch (Exception e) {}
 	}////////////////////////
+	
 	//회원여부 판단용]
-	public boolean isMember(String id,String pwd) {		
-		String sql="SELECT pwd FROM member WHERE id=?";
+		public boolean isMember(String id,String pwd) {		
+			String sql="SELECT pwd FROM member WHERE id=?";
+			try {
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, id);			
+				rs = psmt.executeQuery();
+				if(rs.next()) {
+					String hashValue=rs.getString(1);
+					if(PBKDF2.validatePassword(pwd, hashValue))
+						return true;
+					else return false;
+				}
+				return false;
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+				return false; 
+			}
+			
+		}////////////////////////////
+	
+	//아이디 중복확인용
+	public boolean confirmId(String id) {		
+		String sql="SELECT id FROM member WHERE id=?";
+
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);			
 			rs = psmt.executeQuery();
-			if(rs.next()) {
-				String hashValue=rs.getString(1);
-				if(PBKDF2.validatePassword(pwd, hashValue))
+			while(rs.next()) {
+				if(rs.getString("id").equals(id)) {
+					System.out.println("아이디일치");
 					return true;
-				else return false;
+				}
 			}
-			return false;
 		}
 		catch(Exception e) {
-			e.printStackTrace();
-			return false; 
+			e.printStackTrace(); 
 		}
-		
-	}////////////////////////////
+		System.out.println("아이디불일치");
+		return false;
+	}
+	
+	
+	
 	//전체 목록 가져오기]
 	/*
 	 * 페이징 로직 추가하기
@@ -94,9 +122,9 @@ public class BbsDAO {
 	 * 
 	 * 
 	 */
-	public List<BbsDTO> selectList(Map<String,Object> map){
+	public List<CusDTO> selectList(Map<String,Object> map){
 		
-		List<BbsDTO> list = new Vector<BbsDTO>();
+		List<CusDTO> list = new Vector<CusDTO>();
 		//페이징 미 적용
 		//String sql="SELECT b.*,name FROM bbs b JOIN member m ON b.id=m.id ";
 		//sql+=" ORDER BY postdate DESC";
@@ -120,7 +148,7 @@ public class BbsDAO {
 			
 			
 			while(rs.next()) {
-				BbsDTO dto = new BbsDTO();
+				CusDTO dto = new CusDTO();
 				dto.setContent(rs.getString(4));
 				dto.setId(rs.getString(2));
 				dto.setNo(rs.getString(1));
@@ -157,7 +185,7 @@ public class BbsDAO {
 		return totalCount;
 	}//////////////////////////	
 	//입력용]
-	public int insert(BbsDTO dto) {
+	public int insert(CusDTO dto) {
 		int affected =0;
 		String sql="INSERT INTO bbs(no,id,title,content) VALUES(SEQ_BBS.NEXTVAL,?,?,?)";
 		try {
@@ -183,8 +211,8 @@ public class BbsDAO {
 		}
 	}////////////////////////////////////////
 	//상세보기용]
-	public BbsDTO selectOne(String key) {
-		BbsDTO dto=null;
+	public CusDTO selectOne(String key) {
+		CusDTO dto=null;
 		String sql="SELECT b.*,name FROM bbs b JOIN member m ON b.id=m.id ";
 		sql+=" WHERE no =?";
 		try {
@@ -192,7 +220,7 @@ public class BbsDAO {
 			psmt.setString(1, key);
 			rs = psmt.executeQuery();
 			if(rs.next()) {
-				dto = new BbsDTO();
+				dto = new CusDTO();
 				dto.setContent(rs.getString(4));
 				dto.setId(rs.getString(2));
 				dto.setNo(rs.getString(1));
@@ -207,8 +235,8 @@ public class BbsDAO {
 		return dto;
 	}//////////////////////////////
 	//이전글/다음글 얻기]
-	public Map<String,BbsDTO> prevNNext(String key){
-		Map<String,BbsDTO> map = new HashMap<String,BbsDTO>();		
+	public Map<String,CusDTO> prevNNext(String key){
+		Map<String,CusDTO> map = new HashMap<String,CusDTO>();		
 		try {
 			//이전글 얻기
 			String sql="SELECT no,title FROM bbs WHERE no=(SELECT min(no) FROM bbs WHERE no > ?)";
@@ -216,7 +244,7 @@ public class BbsDAO {
 			psmt.setString(1, key);
 			rs = psmt.executeQuery();			
 			if(rs.next()) {//이전글이 있는 경우
-				BbsDTO dto= new BbsDTO();
+				CusDTO dto= new CusDTO();
 				dto.setNo(rs.getString(1));
 				dto.setTitle(rs.getString(2));
 				map.put("PREV",dto);
@@ -227,7 +255,7 @@ public class BbsDAO {
 			psmt.setString(1, key);
 			rs = psmt.executeQuery();			
 			if(rs.next()) {//다음글이 있는 경우
-				BbsDTO dto= new BbsDTO();
+				CusDTO dto= new CusDTO();
 				dto.setNo(rs.getString(1));
 				dto.setTitle(rs.getString(2));
 				map.put("NEXT",dto);
@@ -240,7 +268,7 @@ public class BbsDAO {
 		return map;
 	}/////////////////////////////
 	//수정용]
-	public int update(BbsDTO dto) {
+	public int update(CusDTO dto) {
 		int affected =0;
 		String sql="UPDATE bbs SET title=?,content=? WHERE no=?";
 		try {
