@@ -148,20 +148,35 @@ body, html {
 </style>
 </head>
 <body onLoad="parent.resizeTo(450,700)">
+<script>
+function pwdCheck(){
+	var pwd = document.getElementById("inputpass").value;
+	var pwdcheck = document.getElementById("inputpass2").value;
+	if(pwd == pwdcheck){
+		document.getElementById("same").innerHTML="비밀번호가 일치 합니다"
+		document.getElementById("same").style.color="green"
+	}
+	else{
+		document.getElementById("same").innerHTML="비밀번호가 일치하지 않습니다."
+		document.getElementById("same").style.color="red"
+	}
+}
+</script>
 	<div class="container">
         <div class="card card-container">
         <h2>Customer</h2><hr style="border: solid 1px #FE9A2E;">
             <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin" method="post" action="../JoinProcess.jsp">
+            <form class="form-signin" method="post" action="../CusJoinProcess.jsp">
                 <span id="reauth-email" class="reauth-email"></span>
                 <label>아이디</label>
-                <input type="text" id="inputid" class="form-control" placeholder="아이디를 입력해주세요" name="id" required autofocus>
+                <input type="text" id="inputid" class="form-control" placeholder="아이디를 입력해주세요" name="id" strequired autofocus>
+                <input type="button" id=idcheck" class="btn btn-lg btn-primary btn-block btn-signin", name="idcheck" value="중복확인" onclick="idcheck()"/><br>
                 <label>이름</label>
                 <input type="text" id="inputname" class="form-control" placeholder="이름를 입력해주세요" name="name" required autofocus>
                 <label>비밀번호</label>
-                <input type="password" id="inputpass" class="form-control" placeholder="비밀번호를 입력해주세요" name="pwd" required>
+                <input type="password" id="inputpass" class="form-control" placeholder="비밀번호를 입력해주세요" name="pwd" onchange="pwdCheck()" required>
                 <label>비밀번호 확인</label>
-                <input type="password" id="inputpass2" class="form-control" placeholder="비밀번호를 입력해주세요" name="pwdcheck" required><br>            
+                <input type="password" id="inputpass2" class="form-control" placeholder="비밀번호를 입력해주세요" name="pwdcheck" onchange="pwdCheck()" required><span id="same"></span><br><br>            
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">완료</button>
             </form><!-- /form -->     
         </div><!-- /card-container -->

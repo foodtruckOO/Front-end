@@ -8,7 +8,7 @@ import java.sql.Date;
  * 
  * 
  */
-public class BbsDTO {
+public class SellerDTO {
 	
 	//속성 혹은 멤버변수]
 	private String no;
@@ -27,8 +27,8 @@ public class BbsDTO {
 		this.name = name;
 	}
 	//생성자]
-	public BbsDTO() {}
-	public BbsDTO(String no, String id, String title, String content, String visitcount, Date postdate) {
+	public SellerDTO() {}
+	public SellerDTO(String no, String id, String title, String content, String visitcount, Date postdate) {
 		this.no = no;
 		this.id = id;
 		this.title = title;

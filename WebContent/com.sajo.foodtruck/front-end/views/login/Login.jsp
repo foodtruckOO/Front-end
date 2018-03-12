@@ -14,7 +14,7 @@ body, html {
     height: 100%;
     background-repeat: no-repeat;
     background-image: linear-gradient(rgb(239, 151, 19), rgb(255, 255, 255));
-} 
+}  
 
 .card-container.card {
     max-width: 350px;
