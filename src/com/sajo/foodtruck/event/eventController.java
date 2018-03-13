@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 public class eventController {
 	
 	//목록용]
-	@RequestMapping("/com.sajo.foodtruck.event/event.do")
+	@RequestMapping("/com.sajo.foodtruck.event/event.event")
 	public String List(Model model, HttpServletRequest req,@RequestParam Map map) throws Exception{
 		
 		eventDAO dao = new eventDAO(req.getServletContext());
@@ -34,7 +34,7 @@ public class eventController {
 	return "/com.sajo.foodtruck/front-end/views/event/home_event/Home_event.jsp";
 	
 	}
-	@RequestMapping("/com.sajo.foodtruck.event/event/view.do")
+	@RequestMapping("/com.sajo.foodtruck.event/event/view.event")
 	public String View(Model model,HttpServletRequest req,@RequestParam Map map) throws Exception{
 		String key = req.getParameter("eno");
 		eventDAO dao = new eventDAO(req.getServletContext());

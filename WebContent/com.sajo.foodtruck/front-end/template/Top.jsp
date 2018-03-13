@@ -71,7 +71,7 @@
 							<span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="<c:url value='/com.sajo.foodtruck/front-end/views/event/home_event/Home_event.jsp'/>">공용 이벤트</a></li>
+							<li><a href="<c:url value='/com.sajo.foodtruck.event/event.event'/>">공용 이벤트</a></li>
 							<li><a href="<c:url value='/com.sajo.foodtruck/front-end/views/event/seller_event/Seller_event.jsp'/>">푸드트럭별 이벤트</a></li>
 						</ul></li>
 

@@ -200,7 +200,7 @@
 				</div>
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a class="portfolio-link" 
-						href="<c:url value='/com.sajo.foodtruck.event/event.do'/>">
+						href="<c:url value='/com.sajo.foodtruck.event/event.event'/>">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
 								<i class="fa fa-plus fa-3x"></i>

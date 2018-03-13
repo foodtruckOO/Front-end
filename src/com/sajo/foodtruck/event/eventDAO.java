@@ -37,7 +37,7 @@ public class eventDAO {
 			//드라이버 로딩]
 			Class.forName(context.getInitParameter("ORACLE_DRIVER"));
 			//데이타베이스 연결]
-			conn = DriverManager.getConnection(context.getInitParameter("ORACLE_URL"),"SPRING","SPRING");
+			conn = DriverManager.getConnection(context.getInitParameter("ORACLE_URL"),"FT","FT");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
