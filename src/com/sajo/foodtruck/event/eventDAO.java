@@ -79,7 +79,7 @@ public class eventDAO {
 	public List<eventDTO> selectList(){
 		List<eventDTO> list = new Vector<eventDTO>();
 		//페이징 미 적용
-		String sql="SELECT * from EVENT ORDER BY eno";
+		String sql="SELECT * from EVENT ORDER BY s_date";
 			//	+ "e.*,name FROM bbs b JOIN member m ON b.id=m.id ";
 		
 		//페이징 적용-구간쿼리로 변경
