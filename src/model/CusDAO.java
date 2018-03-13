@@ -33,7 +33,7 @@ public class CusDAO {
 	//생성자]
 	public CusDAO(ServletContext context) {
 		//커넥션 풀 미 사용-커넥션 객체 메모리에 직접 생성 코드
-		
+		/*
 		try {
 			//드라이버 로딩]
 			Class.forName(context.getInitParameter("ORACLE_DRIVER"));
@@ -42,9 +42,9 @@ public class CusDAO {
 		}
 		catch(Exception e) {
 			e.printStackTrace();
-		}
+		}*/
 		
-		/*//커넥션 풀 사용:톰켓이 생성해 놓은 커넥션 객체 풀에서 가져다 쓰기
+		//커넥션 풀 사용:톰켓이 생성해 놓은 커넥션 객체 풀에서 가져다 쓰기
 		try {
 			InitialContext ctx = new InitialContext();
 			DataSource source=(DataSource)ctx.lookup(context.getInitParameter("TOMCAT_JNDI_ROOT")+"/jdbc/ft");
@@ -55,7 +55,7 @@ public class CusDAO {
 			}		
 		} catch (NamingException e) {			
 			e.printStackTrace();
-		}*/
+		}
 		
 	}////////////////////
 	//자원반납용]
@@ -87,29 +87,7 @@ public class CusDAO {
 				return false; 
 			}
 			
-		}////////////////////////////
-	
-	//회원여부 판단용]
-			public boolean SELLER(String id,String pwd) {		
-				String sql="SELECT pwd FROM SELLER WHERE id=?";
-				try {
-					psmt = conn.prepareStatement(sql);
-					psmt.setString(1, id);			
-					rs = psmt.executeQuery();
-					if(rs.next()) {
-						String hashValue=rs.getString(1);
-						if(PBKDF2.validatePassword(pwd, hashValue))
-							return true;
-						else return false;
-					}
-					return false;
-				}
-				catch(Exception e) {
-					e.printStackTrace();
-					return false; 
-				}
-				
-			}////////////////////////////	
+		}////////////////////////////	
 		
 /*	//아이디 중복확인용
 	public boolean confirmId(String id) {		

@@ -45,7 +45,7 @@ public class SellerDAO {
 		//커넥션 풀 사용:톰켓이 생성해 놓은 커넥션 객체 풀에서 가져다 쓰기
 		try {
 			InitialContext ctx = new InitialContext();
-			DataSource source=(DataSource)ctx.lookup(context.getInitParameter("TOMCAT_JNDI_ROOT")+"/jdbc/jsp");
+			DataSource source=(DataSource)ctx.lookup(context.getInitParameter("TOMCAT_JNDI_ROOT")+"/jdbc/ft");
 			try {
 				conn = source.getConnection();
 			} catch (SQLException e) {				
@@ -66,7 +66,7 @@ public class SellerDAO {
 	}////////////////////////
 	//회원여부 판단용]
 	public boolean isMember(String id,String pwd) {		
-		String sql="SELECT pwd FROM member2 WHERE id=?";
+		String sql="SELECT pwd FROM SELLER WHERE id=?";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);			
