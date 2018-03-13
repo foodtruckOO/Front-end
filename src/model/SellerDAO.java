@@ -21,7 +21,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.ServletContext;
 import javax.sql.DataSource;
-
+ 
 public class SellerDAO {
 	//멤버변수]
 	private Connection conn;

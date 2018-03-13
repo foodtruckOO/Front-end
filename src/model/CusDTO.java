@@ -7,7 +7,7 @@ import java.sql.Date;
  *                          있는 자료구조
  * 
  * 
- */
+ */ 
 public class CusDTO {
 	
 	//속성 혹은 멤버변수]

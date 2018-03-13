@@ -17,7 +17,7 @@ function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2){//,en
 		document.form.roadAddrPart1.value = roadAddrPart1;
 		document.form.roadAddrPart2.value = roadAddrPart2;
 		document.form.addrDetail.value = addrDetail;		
-}
+} 
 </script>
 <meta charset="UTF-8">
 <title>Insert title here</title>

@@ -23,7 +23,7 @@ import javax.servlet.ServletContext;
 import javax.sql.DataSource;
 
 import sun.reflect.generics.tree.BottomSignature;
-
+ 
 public class CusDAO {
 	//멤버변수]
 	private Connection conn;
@@ -33,21 +33,21 @@ public class CusDAO {
 	//생성자]
 	public CusDAO(ServletContext context) {
 		//커넥션 풀 미 사용-커넥션 객체 메모리에 직접 생성 코드
-		/*
+		
 		try {
 			//드라이버 로딩]
 			Class.forName(context.getInitParameter("ORACLE_DRIVER"));
 			//데이타베이스 연결]
-			conn = DriverManager.getConnection(context.getInitParameter("ORACLE_URL"),"JSP","JSP");
+			conn = DriverManager.getConnection(context.getInitParameter("ORACLE_URL"),"FT","FT");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
-		}*/
+		}
 		
-		//커넥션 풀 사용:톰켓이 생성해 놓은 커넥션 객체 풀에서 가져다 쓰기
+		/*//커넥션 풀 사용:톰켓이 생성해 놓은 커넥션 객체 풀에서 가져다 쓰기
 		try {
 			InitialContext ctx = new InitialContext();
-			DataSource source=(DataSource)ctx.lookup(context.getInitParameter("TOMCAT_JNDI_ROOT")+"/jdbc/jsp");
+			DataSource source=(DataSource)ctx.lookup(context.getInitParameter("TOMCAT_JNDI_ROOT")+"/jdbc/ft");
 			try {
 				conn = source.getConnection();
 			} catch (SQLException e) {				
@@ -55,7 +55,7 @@ public class CusDAO {
 			}		
 		} catch (NamingException e) {			
 			e.printStackTrace();
-		}
+		}*/
 		
 	}////////////////////
 	//자원반납용]
@@ -69,7 +69,7 @@ public class CusDAO {
 	
 	//회원여부 판단용]
 		public boolean isMember(String id,String pwd) {		
-			String sql="SELECT pwd FROM member WHERE id=?";
+			String sql="SELECT pwd FROM CUSTOMER WHERE id=?";
 			try {
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, id);			
@@ -89,7 +89,29 @@ public class CusDAO {
 			
 		}////////////////////////////
 	
-	//아이디 중복확인용
+	//회원여부 판단용]
+			public boolean SELLER(String id,String pwd) {		
+				String sql="SELECT pwd FROM SELLER WHERE id=?";
+				try {
+					psmt = conn.prepareStatement(sql);
+					psmt.setString(1, id);			
+					rs = psmt.executeQuery();
+					if(rs.next()) {
+						String hashValue=rs.getString(1);
+						if(PBKDF2.validatePassword(pwd, hashValue))
+							return true;
+						else return false;
+					}
+					return false;
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+					return false; 
+				}
+				
+			}////////////////////////////	
+		
+/*	//아이디 중복확인용
 	public boolean confirmId(String id) {		
 		String sql="SELECT id FROM member WHERE id=?";
 
@@ -109,7 +131,7 @@ public class CusDAO {
 		}
 		System.out.println("아이디불일치");
 		return false;
-	}
+	}*/
 	
 	
 	

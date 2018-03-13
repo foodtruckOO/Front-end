@@ -14,4 +14,4 @@
 	out.println("location.replace('"+request.getContextPath()+"/com.sajo.foodtruck/front-end/views/main.jsp');");
 	out.println("alert('로그아웃 성공!');");
 	out.println("</script>");
-%>  
+%>   

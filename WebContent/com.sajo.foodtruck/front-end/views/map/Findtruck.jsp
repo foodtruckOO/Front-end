@@ -9,7 +9,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- 소재지 js 호출 -->
 <script src="<c:url value='/com.sajo.foodtruck/front-end/views/map/sojaeji.js'/>"></script>
-
+ 
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
     <title>Foodtruck:: ver1.0</title>
 
 	<style>
-    /* .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;} */
+    .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
     .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
     .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
@@ -84,7 +84,7 @@
       <article style="margin-right:30px; margin-left: 30px">
         <div id="map" style="width:100%;height:500px;"></div>
         <!-- 지도 api 호출 -->
-		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5b87267b28b64e24405b16229700bf78&libraries=services"></script>
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=07081f33b5c3c2dd65b5d5a0b0e85296&libraries=services"></script>
       </article><br><br>
            
       <article>
@@ -131,7 +131,9 @@
 	
 	<!-- 지도생성 / 설정-->
 	<script>
-	//var markers = [];
+	var markers = [];
+	var infowindow;
+	
 	var container = document.getElementById('map');
 	var options = {
 		center: new daum.maps.LatLng(37.47893444641687, 126.87900549310089),
@@ -147,7 +149,6 @@
 	var zoomControl = new daum.maps.ZoomControl();
 	map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
 
-
 	// 마커를 표시할 위치와 title 객체 배열입니다 
 	var positions = [
 	    {
@@ -156,11 +157,11 @@
             '    <div class="info">' + 
             '        <div class="title">' + 
             '            강남푸드트럭존' + 
-            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+            '            <div class="close" onclick="closeOverlay(0)" title="닫기"></div>' + 
             '        </div>' + 
             '        <div class="body">' + 
             '            <div class="img">' +
-            '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
+            '                <img src="<c:url value='/com.sajo.foodtruck/front-end/images/KakaoTalk_20180308_190036939.png'/>" width="73" height="70">' +
             '           </div>' + 
             '            <div class="desc">' + 
             '                <div class="ellipsis">서울특별시 강남구</div>' + 
@@ -178,11 +179,11 @@
             '    <div class="info">' + 
             '        <div class="title">' + 
             '            수원푸드트레일러존' + 
-            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+            '            <div class="close" onclick="closeOverlay(1)" title="닫기"></div>' + 
             '        </div>' + 
             '        <div class="body">' + 
             '            <div class="img">' +
-            '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
+            '                <img src="<c:url value='/com.sajo.foodtruck/front-end/images/KakaoTalk_20180308_190036939.png'/>" width="73" height="70">' +
             '           </div>' + 
             '            <div class="desc">' + 
             '                <div class="ellipsis">서울특별시 강남구</div>' + 
@@ -200,11 +201,11 @@
             '    <div class="info">' + 
             '        <div class="title">' + 
             '            명동푸드트럭존' + 
-            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+            '            <div class="close" onclick="closeOverlay(2)" title="닫기"></div>' + 
             '        </div>' + 
             '        <div class="body">' + 
             '            <div class="img">' +
-            '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
+            '                <img src="<c:url value='/com.sajo.foodtruck/front-end/images/KakaoTalk_20180308_190036939.png'/>" width="73" height="70">' +
             '           </div>' + 
             '            <div class="desc">' + 
             '                <div class="ellipsis">서울특별시 중구</div>' + 
@@ -222,11 +223,11 @@
             '    <div class="info">' + 
             '        <div class="title">' + 
             '            여의도푸드트럭존' + 
-            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+            '            <div class="close" onclick="closeOverlay(3)" title="닫기"></div>' + 
             '        </div>' + 
             '        <div class="body">' + 
             '            <div class="img">' +
-            '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
+            '                <img src="<c:url value='/com.sajo.foodtruck/front-end/images/KakaoTalk_20180308_190036939.png'/>" width="73" height="70">' +
             '           </div>' + 
             '            <div class="desc">' + 
             '                <div class="ellipsis">서울특별시 영등포구</div>' + 
@@ -243,12 +244,12 @@
     		'<div class="wrap">' + 
             '    <div class="info">' + 
             '        <div class="title">' + 
-            '            한강푸드트럭존' + 
-            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+            '            한강푸드트럭존' +
+            '            <div class="close" onclick="closeOverlay(4)" title="닫기"></div>' +  
             '        </div>' + 
             '        <div class="body">' + 
             '            <div class="img">' +
-            '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
+            '                <img src="<c:url value='/com.sajo.foodtruck/front-end/images/KakaoTalk_20180308_190036939.png'/>" width="73" height="70">' +
             '           </div>' + 
             '            <div class="desc">' + 
             '                <div class="ellipsis">서울특별시 성동구</div>' + 
@@ -266,16 +267,17 @@
             '    <div class="info">' + 
             '        <div class="title">' + 
             '            가산푸드트럭존' + 
-            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+            '            <div class="close" onclick="closeOverlay(5)" title="닫기"></div>' + 
             '        </div>' + 
             '        <div class="body">' + 
             '            <div class="img">' +
-            '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
+            '                <img src="<c:url value='/com.sajo.foodtruck/front-end/images/KakaoTalk_20180308_190036939.png'/>" width="73" height="70">' +
             '           </div>' + 
             '            <div class="desc">' + 
             '                <div class="ellipsis">서울특별시 금천구</div>' + 
             '                <div class="jibun ellipsis">1.스테이크트럭</div>' + 
-            '                <div class="jibun ellipsis" style="color:red;">2.솜사탕트럭</div>' + 
+            '                <div class="jibun ellipsis" style="color:red;">2.솜사탕트럭</div>' +
+            '                <div><a href="<c:url value='/com.sajo.foodtruck/front-end/views/main.jsp'/>" target="_blank" class="link">상세보기</a></div>' +  
             '            </div>' + 
             '        </div>' + 
             '    </div>' +    
@@ -286,44 +288,40 @@
 
 	// 마커 이미지의 이미지 주소입니다
 	var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
-	    
-	for (var i = 0; i < positions.length; i ++) {
-	    
+	var overlays=[];
+	
+	for (var i = 0; i < positions.length; i ++) {	    
 	    // 마커 이미지의 이미지 크기 입니다
-	    var imageSize = new daum.maps.Size(24, 35); 
-	    
+	    var imageSize = new daum.maps.Size(24, 35);   
 	    // 마커 이미지를 생성합니다    
-	    var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize); 
-	    
+	    var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize); 	    
 	    // 마커를 생성합니다
 	    var marker = new daum.maps.Marker({
 	        map: map, // 마커를 표시할 지도
 	        position: positions[i].latlng, // 마커를 표시할 위치
 	        image : markerImage // 마커 이미지 
 	    });
-	 	// 마커에 표시할 인포윈도우를 생성합니다 
-	    var infowindow = new daum.maps.InfoWindow({
-	    	content: positions[i].content // 인포윈도우에 표시할 내용
+	   	var overlay = new daum.maps.CustomOverlay({
+	        content: positions[i].content,
+	        position: positions[i].latlng
 	    });
-	    daum.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-	    daum.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
-	    /* daum.maps.event.addListener(marker, 'click', function() {
-	    	 
-		}); */
+	   	overlays.push(overlay);
+	    daum.maps.event.addListener(marker, 'click', openOverlay(map, marker, overlay));
+	   
+	} 
+	
+	function openOverlay(map,marker,overlay){
+		 return function() {
+			overlay.setMap(map);
+		 };
 	}
-	// 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
-	function makeOverListener(map, marker, infowindow) {
-	    return function() {
-	        infowindow.open(map, marker);
-	    };
-	}
-	// 인포윈도우를 닫는 클로저를 만드는 함수입니다 
-	function makeOutListener(infowindow) {
-	    return function() {
-	        infowindow.close();
-	    };
+	// 커스텀 오버레이를 닫기 위해 호출되는 함수입니다 
+    function closeOverlay(index) {
+        	overlays[index].setMap(null);     	
 	}
 	
+
+
 	// 장소 검색 객체를 생성합니다
 	var ps = new daum.maps.services.Places();
 	// 키워드를 생성한다
@@ -336,6 +334,8 @@
 			//var c=$('#dong').val();
 			var d=$('#address').val()==null?" ":$('#address').val();
 			keyword = a+" "+b+" "+d;
+			// 지도 위에 표시되고 있는 마커를 모두 제거합니다
+			removeMarker();
 			// 키워드로 장소를 검색합니다
 			ps.keywordSearch(keyword, placesSearchCB); 
 			console.log(keyword);
@@ -353,9 +353,38 @@
 	        }       
 	        // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
 	        map.setBounds(bounds);
+	     	// 지도의 중심좌표를 얻어옵니다 
+		    var latlng = map.getCenter();
+		    //var message = '<p>중심 좌표는 위도 ' + latlng.getLat() + ', 경도 ' + latlng.getLng() + '입니다</p>';
+			// 마커가 표시될 위치입니다 
+		    var markerPosition  = new daum.maps.LatLng(latlng.getLat(), latlng.getLng()); 
+		    // 마커를 생성합니다
+		    var marker = new daum.maps.Marker({
+		        position: markerPosition
+		    });
+		    // 마커가 지도 위에 표시되도록 설정합니다
+		    marker.setMap(map);
+		    // 생성된 마커를 배열에 추가합니다
+		    markers.push(marker);
+
+		    var iwContent = '<div style="width:180px;">현위치 좌표<br><br> 위도:'+latlng.getLat()+'<br> 경도:'+latlng.getLng()+'<br/><br/></div>',
+		    iwPosition = new daum.maps.LatLng(latlng.getLat(), latlng.getLng());
+			// 인포윈도우를 생성합니다
+			infowindow = new daum.maps.InfoWindow({
+		    position : iwPosition, 
+		    content : iwContent 
+			});
+			// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+			infowindow.open(map, marker);
 	    } 
 	}
-	
+	//지도위에 추가된 마커를 삭제하는 함수
+	function removeMarker() {
+		for ( var i = 0; i < markers.length; i++ ) {
+		infowindow.close();
+		markers[i].setMap(null);
+		} 
+	}
 	</script>
 
     <!-- Bootstrap core JavaScript
