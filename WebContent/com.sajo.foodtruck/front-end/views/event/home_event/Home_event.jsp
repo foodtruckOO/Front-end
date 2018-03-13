@@ -60,7 +60,7 @@ table, table th {
 		</div>
 		<div class="row">
 				<c:forEach items="${event}" var ="dto">
-			<div class="col-xs-6 col-lg-4 thumbnail" style="border: none">
+			<div class="col-xs-6 col-lg-4 thumbnail" style="border: none" >
 				<a href="<c:url value='/com.sajo.foodtruck.event/event/view.event?eno=${dto.eno}'/>"> <img class="img-responsive img-rounded"
 					src="<c:url value ='/com.sajo.foodtruck/front-end/images/${dto.attachedfile}'/>">
 					<h3 style="text-indent: 45px">${dto.title}</h3>
