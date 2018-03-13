@@ -8,7 +8,7 @@
 <%@page import="model.SellerDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
+<% 
 	//한글처리
 	//id passwd name 가져오기
 	request.setCharacterEncoding("utf-8");
